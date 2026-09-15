@@ -1,0 +1,681 @@
+/* -----------------------------------------------------
+	Responsive Styles
+----------------------------------------------------- */
+@media screen and (max-width: 1599px) {
+
+.about-jhustin .products li:last-child { margin-left: 50px !important; }	
+	
+/* ===== MEMBERSHIP ====== */
+.membership .vision .left-block .content { margin-right: 0; }
+.membership .vision .right-block .content { margin-left: 10px; }
+
+}
+
+@media screen and (max-width: 1499px) {
+
+.about-jhustin .products li:last-child { margin-left: 0 !important; }	
+.about-jhustin .max { padding: 0 30px; }
+	
+/* ===== MEMBERSHIP ====== */
+.membership .vision .right-block .content { margin-left: 0; }
+.membership .vision .content { padding: 0 30px; }
+
+
+}
+
+@media screen and (max-width: 1399px) {
+
+header .navbar-nav li { padding-right: 20px; }
+header .navbar-nav { padding-right: 5px; }
+.about-jhustin .products li { margin:0 !important; padding:0 15px !important; }
+	
+	
+}
+
+@media screen and (max-width: 1299px) {
+
+.home-about .content { padding: 0 30px 0 15px; }
+header.affix .logo { display:inline-block; max-width: 220px; }
+header.affix #nav { padding-top: 25px; }
+.about-jhustin .products li { width:50% !important; }
+	
+}
+
+@media screen and (max-width: 1199px) {
+
+h2 { font-size: 41px; }
+header .logo { display: block; text-align: center; }
+#nav { float: none; padding-top: 0; }
+header .header_social { float: right; }
+header.affix .logo { display: block; margin: 0 auto; }
+header.affix #nav { padding-top: 10px; }
+header.affix .btn { margin-top: 0px; }
+header.affix { padding-bottom: 10px; }
+.inner-banner { background-position: right; }
+.single-product .inner-banner, .single-post .inner-banner { background-position: 80%; }
+.about-jhustin .products li img { margin: 0 auto 20px !important; }
+.about-jhustin .max { padding: 0 15px; }
+.banner .item { min-height: 740px; }
+.banner h1 { font-size: 33px; }
+.home-about .content { padding: 0 15px; }
+.music-block .smaple { max-width: 620px; }
+.volunteer { text-align: center; }
+.volunteer h3 { float: none; max-width: 100%; }
+.volunteer .black-btn { float: none; }
+.about-jhustin p { margin-bottom: 20px; }
+
+/*======= INNER-BANNER ==========*/
+.inner-banner h1 { font-size: 59px; }
+
+/* ===== MEMBERSHIP ====== */
+.membership .vision .content { padding: 0 20px; }
+
+/* ===== ABOUT PAGE ====== */
+.about .hot-block .img-block { width: 35%; }
+.about .hot-block .content { width: 65%; }
+.about .hot-block:nth-child(even) .content { padding: 0 25px 0 0; }
+
+/* ===== FOUNDATION ====== */
+.foundation .offered .found h4 { padding-top: 0; }
+
+/* ===== CONTACT ====== */
+.contact .massage .min { padding: 0 40px 0 15px; }
+
+}
+
+/* 1. Reset your theme's old forced media query image */
+@media screen and (min-width: 1199px) {
+    .banner {
+        min-height: auto !important; 
+        background: none !important;  
+    }
+    	/* ===== VIDEO SLIDER ====== */
+	.carousel-main .flickity-viewport{ height: 520px !important;}
+	.carousel-main .flex-video{padding-bottom: 53% !important;}
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+h2 { font-size: 36px; line-height: 40px; }
+h3 { font-size: 25px; line-height: 30px; }
+header .navbar-nav{ display: block;padding: 70px 0 20px;text-align: left;max-width: 400px;margin: 0 auto; text-align: left; }
+header .navbar-nav li { padding: 0 !important; float: none;border-bottom: 1px solid #ffd300;  }
+header .navbar-nav li a{ color: #fff; font-size: 18px;letter-spacing: 1px; display: block; padding: 15px; }
+header .logo { display: inline-block; text-align: left; }
+header .logo img { height:100%; }
+header.affix .logo { margin: 0; }
+header .btn { margin: 35px 45px 0 0; }
+header .navbar-nav li a::after { display: none; }
+header .social-icons { padding-right: 0; display: block; text-align: center; }
+header nav#nav.is-active { overflow: scroll; padding-bottom: 40px; }
+header.affix .mobile-toggle { top: 27px !important; }
+header.affix { padding-bottom: 0; }
+header .header_social { float: none; display: block; } 
+.banner .item { min-height: 650px; }
+.home-about { display: block; }
+.home-about .image-block { background-image: none !important; min-height: auto; width: 100%;overflow: hidden; }
+.home-about .content-block { background-size: cover; width: 100%; padding:0;}
+.home-about .image-block figure img { display: block !important; width: 100%; }
+.home-about:after { display: none; }
+.home-about .content { padding: 40px 15px 60px; max-width: 100%; text-align: center; }
+.home-about h2, .home-about p { text-align: start; }
+.home-about h2 strong, .home-about p { color: #fff; }
+.home-about .btn { color: #fff!important; }
+.official-store .store-block { padding: 0 15px; }
+.official-store .store-block li.product { width: 30.8% !important; }
+.store { width: 48%; margin: 0 1% 15px; }
+.store .content { padding: 13px 10px; }
+.music-block .smaple { max-width: 100%; float: none; padding: 0 15px; }
+.music-block .social-circle { margin-top: 15px; text-align: center; }
+.music-block h4 { font-size: 22px; }
+.volunteer h3 { font-size: 29px; }
+.watch-videos .vidoe-block { display: block; padding: 0 15px; }
+.watch-videos aside { display: block; width: 100% !important; padding: 0; }
+.watch-videos .video { max-width: 700px; width: 100%; margin: 0 auto 15px; }
+.watch-videos .left-block .video { min-height: 363px; }
+.about-jhustin .row { display: block; }
+.about-jhustin aside { display: block; text-align: center; width: 100% !important; overflow: hidden; }
+.about-jhustin .imag-block figure { float: none; margin: 0 auto; padding: 0 15px; }
+.about-jhustin .book .products.columns-2 { max-width: 700px; width: 100%; margin: 0 auto; }
+footer .social-circle { float: none; text-align: center; margin-top: 20px; }
+footer .footer-menu li { padding: 0 10px; }
+.about-jhustin .book { padding: 40px 0 50px; }	
+.about-jhustin .products li { width: 49.5% !important; display: inline-block !important; float: none; }
+.official-store .products li { width: 48% !important; margin: 0 1% 20px !important; }
+	
+/*======= INNER-BANNER ==========*/
+.inner-banner h1 { font-size: 54px; line-height: 55px; }
+
+/* ===== BLOG ====== */
+.blog-page .search-block { max-width: 400px; width: 100%; margin: 50px auto 0; }
+
+/* ===== DONATE ====== */
+.donate .donate-block .amount p { float: none; display: inline-block; }
+.donate .donate-block ul { float: none; }
+.donate .donate-block ul li { margin: 10px 5px; }
+.donate .donate-block { padding: 80px 30px; }
+.donate .donate-text { padding-left: 0!important;}
+.donate form .form-group:nth-child(odd) { padding-right: 7px; }
+.donate form .form-group:nth-child(even) { padding-left: 7px; }	
+
+/* ===== ABOUT PAGE ====== */
+.about .jhustin-hall .row { display: block; }
+.about .jhustin-hall aside { display: block; text-align: center; }
+.about .jhustin-hall figure { max-width: 500px; width: 100%; margin: 0 auto 20px; }
+.about .hot-block { display: block; }
+.about .hot-block aside { display: block; width: 100% !important; padding: 0 !important; text-align: center; }
+.about .hot-block figure { max-width: 400px; width: 100%; margin: 0 auto 25px; }
+
+/* ===== FOUNDATION ====== */
+.foundation .appay-now .container-fluid { display: block; }
+.foundation .appay-now aside { display: block; width: 100% !important; text-align: center; padding: 0 !important; }
+.foundation .appay-now figure { max-width: 500px; width: 100%; margin: 0 auto 20px; }
+.foundation .offered .found figure { max-width: 600px; width: 100%; margin: 0 auto 20px; }
+
+/* ===== CONTACT ====== */
+.contact h3 { font-size: 31px; }
+.contact .contact-block .min { padding: 0 15px 0 20px; }
+.contact { display: block; }
+.contact aside { display: block; width: 100% !important; overflow: hidden; }
+.contact .massage .min { padding: 0 15px; float: none; margin: 0 auto; max-width: 600px; }
+.contact .contact-block .min { padding: 0 15px; margin: 0 auto; max-width: 600px; }	
+.donate .donate-block .amount h3 {
+    margin-top: 21px;
+}
+	.donate .donate-block .amount.clearfix.form-group.app {
+    text-align: center;
+}
+
+#nav{text-align: center;}
+
+/* ===== VIDEO SLIDER ====== */
+.carousel-nav .carousel-cell {height: 140px; width: 33.33%;}
+}
+
+@media screen and (max-width: 767px) {
+
+p { font-size: 16px; line-height: 26px; }
+h2 { font-size: 31px; }
+h4 { font-size: 21px; }
+section { padding: 40px 0; }
+.btn.black-btn { padding: 10px 25px; }
+.social-circle li a { font-size: 18px; width: 45px; height: 45px; line-height: 42px; }
+header .btn { font-size: 14px; }
+header .navbar-nav li a { font-size: 16px; padding: 10px; }
+header .logo { max-width: 250px; width:100%; }
+.mobile-toggle { top: 35px !important; }
+.btn { font-size: 16px; padding: 10px 20px; }
+.banner #banner .item { background-image: none!important; 
+        background-color: #000!important;
+        display: block!important;
+        padding: 0!important;
+        margin-bottom: 3.5rem!important;
+}
+.banner #banner .hero-image {
+    display: block!important;
+    width: 100%!important;
+    padding: 0;
+    margin-top: 10rem!important;
+}
+.banner #banner .hero-image img {
+    width: 100% !important;
+    height: 250px !important;       
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+}
+.banner #banner .row { display: flex!important; flex-direction: column!important;}
+.banner #banner .hero-image {
+    order: 1!important;
+}
+.banner #banner .content {
+    order: 2!important;
+}
+.banner .container-fluid { background-color: transparent !important;}
+.banner .content {
+        position: relative !important;
+        transform: none !important;
+        padding: 20px 0 60px !important;
+        text-align: center !important;
+    }
+#banner .content h2 { 
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.05;
+    color: #ffffff !important;
+    margin: 0 0 20px 0; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+#banner .content h2 strong { 
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.05;
+    color: #ffd300 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.banner .content .btn {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: 20px auto 0 !important;
+        display: inline-block !important;
+    }
+.membership .member ul { width: 100% !important; }
+.home-about p { margin-bottom: 15px; }
+.store strong { font-size: 16px; }
+.store .buy { font-size: 16px; padding: 0 5px 1px; }
+.official-store h2 { margin-bottom: 20px; }
+.official-store { padding-top: 40px; }
+.official-store { padding-bottom: 10px; }
+.music { padding: 40px 0 50px; }
+.ministry .btn { padding: 10px 20px; margin: 0; }
+.ministry { padding: 40px 0; }
+.news .read { font-size: 16px; padding: 0 5px; }
+.news ul li { font-size: 14px; letter-spacing: 0; }
+.news ul li:first-child { font-size: 18px; }
+.news ul { right: 20px; width: 60px; }
+.news figure { margin-bottom: 10px; }
+.news-update h2 { margin-bottom: 30px; }
+.volunteer h3 { font-size: 24px; line-height: 33px; }
+.volunteer { padding: 40px 0; }
+.subscribe .form-control { font-size: 14px; height: 40px; }
+.subscribe .btn { margin-top: 10px; font-size: 14px; padding: 8px 20px; }
+.watch-videos { padding: 40px 0 50px; }
+.watch-videos .btn { padding: 10px 20px; margin-top: 15px; }
+.watch-videos h2 { margin-bottom: 20px; }
+.about-jhustin h4 { font-size: 23px; line-height: 28px; }
+footer .footer-logo { max-width: 250px; width: 100%; margin: 0 auto 20px; }
+footer .footer-contact aside { text-align:center; margin-bottom:15px; }
+footer { padding-top: 40px; }	
+footer .footer-menu { margin-bottom: 20px; }
+footer .copy-rights { margin-top: 30px; }
+footer .social-circle li a { font-size: 16px; width: 40px; height: 40px; line-height: 34px; }
+footer .footer-menu li { padding: 0 3px 10px; font-size: 15px; }
+footer .footer-logo img { height:100%; }
+.about-jhustin ul.products { max-width: 650px; width: 100%; margin: 0 auto; }
+.about-jhustin h2 { margin-bottom: 20px; }
+.official-store .products h2 { padding: 0 10px !important; font-size: 16px !important; }
+.official-store .products .price { padding: 0 10px; font-size: 16px !important; }
+.official-store .products .button { font-size: 16px; margin: 0 10px !important; }
+.home-gallery .item a.popup-vimeo::after { width: 50px; height: 50px; }	
+	
+/*======= INNER-BANNER ==========*/
+.inner-banner { min-height: 400px; }
+.inner-banner h1 { font-size: 45px; }
+.inner-banner.about-ban figure img { max-width: 370px; }
+.inner-banner.news-ban figure img { max-width: 305px; width: 100%; }	
+    .inner-banner {  background-position:center !important;}
+    .page-template-ministry .inner-banner, .page-template-foundation .inner-banner{ background-position: left !important; }
+	
+/* ===== MEMBERSHIP ====== */
+.membership .welcome { padding: 40px 0; }
+.membership .welcome h2 { margin-bottom: 15px; }
+.membership .vision { display: block; }
+.membership .vision aside { display: block; width: 100%; overflow: hidden; padding: 40px 0 30px; }
+.membership .vision .content { float: none !important; width: 100%; padding: 0 15px; }
+.membership .vision h4 { margin-bottom: 15px; }
+.membership .donate { padding: 10px 0 35px; }
+.membership .donate .text-block { padding-top: 20px; }
+.membership .donate .row { margin-bottom: 40px; }
+.membership .member { margin-bottom: 30px; }
+.membership .we { padding-top: 0; }
+.membership .member ul li { display: block; width: 100% !important; }
+.membership .btn.yellow { margin-top: 10px; font-size: 18px; padding: 12px 25px; }
+.membership .vision .content { max-width: 100%; }
+.membership .testimonials aside { float: none; width: 49.5%; padding: 0 12px 25px; display: inline-block; }	
+.membership .testimonials { padding: 50px 0; }
+.membership .testimonials h2 { margin-bottom: 25px; }	
+.membership .testimonials aside figure .play { width: 45px !important; }
+	
+/* ===== BLOG ====== */
+.blog-page { padding: 40px 0; }
+.blog-block { padding: 20px 0; }
+.search .form-control { height: 40px; }
+.search .btn-default { padding: 5px 15px 8px; height: 40px; }
+.blog-page .post-heading { font-size: 18px; line-height: 25px; }
+.page-nation li a { font-size: 14px; width: 30px; height: 30px; line-height: 26px; }
+.blog-block p { font-size: 14px; }
+.blog-block .read { font-size: 14px; }
+
+/* ===== BLOG-DETAILS ====== */
+.blog-details .blog-block h4 { font-size: 23px; line-height: 25px; margin-bottom: 15px; }
+.blog-details .blog-block p { margin-bottom: 15px; }
+.blog-details .social-block p { margin-bottom: 0; }
+form .form-group.area .form-control { height: 100px; }
+form .btn { font-size: 14px; padding: 10px 10px; }
+
+/* ===== DONATE ====== */
+.donate .donate-block { margin-top: 60px; }
+.donate { padding: 170px 0 80px; }
+.donate .donate-block { padding: 40px 20px 0; }
+.donate .donate-text { padding-left: 0!important;}
+.donate form .btn { padding: 10px 15px; margin-top: 0; }
+.donate form .form-group { margin-bottom: 20px; }
+.donate form .form-group .form-control { font-size: 14px; height: 40px; padding: 0 15px; }
+.wpcf7-form-control.center-mobile-btn { display: block; margin-left: auto; margin-right: auto; text-align: center;}
+
+/* ===== ABOUT PAGE ====== */
+.about .jhustin-hall { padding: 50px 0; }
+.about .jhustin-hall p { margin-bottom: 15px; }
+.about .jhustin-hall h2 { margin-bottom: 15px; }
+.about .hot-block p { margin-bottom: 15px; }
+.about .hot-block { padding: 25px 0; }
+.about .hotandcold { padding: 10px 0; }
+
+/* ===== FOUNDATION ====== */
+.foundation .dream { padding: 50px 0; }
+.foundation .dream h2 { margin-bottom: 20px; }
+.foundation .dream p { margin-bottom: 15px; }
+.foundation .appay-now { padding: 50px 0; }
+.foundation .appay-now h3 { font-size: 27px;  }
+.foundation .appay-now p { margin-bottom: 15px; }
+.foundation .appay-now .btn { font-size: 14px; padding: 10px 20px; margin-top: 5px; }
+.foundation .offered h2 { margin-bottom: 25px; }
+.foundation .offered { padding: 45px 0; }
+.foundation .offered .indus aside { margin-bottom: 20px; }
+.application form .btn { padding: 10px 25px; margin-top: 10px; }
+.foundation .application h2 { margin-bottom: 20px; }
+.foundation .application { padding: 50px 0; }
+.application form .form-group .form-control { height: 35px; }
+.application form .form-group { margin-bottom: 15px; }
+.application form .form-group label { font-size: 14px; }
+.application form .form-group { width: 50%; }
+.application form .left-group .form-group { float: none; width: 100%; }
+.application form .left-group { width: 50%; }
+.application form .right-group { width: 50%; }
+.application form .left-group textarea.form-control { height: 70px; }
+.application form .right-group textarea.form-control { height: 120px; }
+
+/* ===== CONTACT ====== */
+.contact aside { padding: 10px 0; }
+.contact form .form-control { height: 40px; }
+.contact form .btn { padding: 10px 20px; margin-top: 0; }
+.contact h3 { font-size: 26px; }
+.contact .contact-block p { margin-bottom: 20px; }
+.contact .con-block { margin-bottom: 20px; }	
+.donate .donate-block .amount.clearfix.form-group {
+    width: 100%;
+    margin: 0;
+}
+.banner .btn-content {
+    position: inherit;
+    margin-bottom: 40px;
+}
+
+/* ===== VIDEO SLIDER ====== */
+.carousel-nav .carousel-cell {height: 140px; width: 50%;}
+}
+
+@media screen and (max-width: 599px) {
+.donate .donate-block .amount.clearfix.form-group {
+    display: block;
+}
+h3 { font-size: 22px; }
+header .logo { max-width: 250px; width: 100%; }
+.banner h1 { font-size: 28px; line-height: 35px; margin-bottom: 20px; }
+.banner .item figure .hide { display: block !important; height: 400px; object-fit: cover; }
+.btn { font-size: 14px; }
+.music-block h4 { font-size: 18px; }
+.official-store .store-block li.product { width: 47% !important; }
+.news { float: none; width: 100%; max-width: 400px; margin: 0 auto 30px; padding: 0; }
+footer .footer-menu li { padding: 0 0 10px; font-size: 16px; display: block; }
+footer .footer-logo { max-width: 200px; }
+	
+/*======= INNER-BANNER ==========*/
+.inner-banner { min-height: 350px; }
+.inner-banner h1 { font-size: 40px; }
+.inner-banner.about-ban figure img { max-width: 260px; }
+.inner-banner.news-ban figure img { max-width: 270px; }	
+.page-template-ministry-php .inner-banner{ background-position: left !important; }   
+.inner-banner.news-ban h1{ width:50%; }
+	
+/* ===== DONATE ====== */
+.donate { padding: 140px 0 0; }	
+
+
+/* ===== FOUNDATION ====== */
+.foundation .appay-now h3 { font-size: 23px; line-height: 30px; }	
+
+/* ===== MEMBERSHIP ====== */
+.membership .testimonials aside { width: 100%; max-width: 400px; display:block; margin: 0 auto; }	
+	
+}
+ 
+@media screen and (max-width: 479px) {
+
+h2 { font-size: 27px; }
+.banner .item { min-height: 500px; }
+.home-about h2 { margin-bottom: 15px; }
+.store { width: 100%; max-width: 350px; float: none; margin: 0 auto 15px; }
+.social-circle li a { font-size: 16px; width: 37px; height: 37px; line-height: 33px; }
+.music-block figure { float: none; margin: 0 auto; }
+.music-block .con { padding: 15px 0 0; text-align: center; }
+.music-block .social-circle { margin-top: 0; }
+.watch-videos .right-block .video,
+.watch-videos .left-block .video { min-height: 260px; }
+.official-store .store-block li.product { width: 100% !important; max-width: 320px; }
+footer .footer-contact aside i { font-size: 20px; margin-right: 7px; }
+footer .footer-contact aside { font-size: 16px; word-break: break-all; }
+footer .social-circle li i { margin: 0; }
+.about-jhustin .products li { width: 100% !important; display: block !important; max-width: 300px !important; margin: 0 auto 30px !important; float: none !important; }
+.about-jhustin .products li:last-child { margin: 0 auto !important; }	
+.official-store .products li { width: 100% !important; margin: 0 auto 30px !important; max-width: 300px; float: none !important; }
+
+/*======= INNER-BANNER ==========*/
+.inner-banner { min-height: 330px; }
+.inner-banner h1 { font-size: 30px; line-height: 35px;}
+.inner-banner.about-ban figure img { max-width: 210px; }
+.inner-banner.news-ban figure img { max-width: 240px; }	
+	
+/* ===== BLOG-DETAILS ====== */
+form .form-group { float: none; width: 100%; padding: 0 !important; }
+	
+/* ===== FOUNDATION ====== */
+.foundation .offered .found ul li { float: none; width: 100%; }
+.foundation .offered .found h4 { margin-bottom: 15px; }
+.application form { max-width: 350px; width: 100%; margin: 0 auto; }
+.application form .form-group { width: 100%; }
+.application form .left-group { width: 100%; }
+.application form .right-group { width: 100%; }
+
+/* ===== CONTACT ====== */
+.contact .con-block figure { max-width: 35px; width: 100%; }
+.contact .con-block p { padding-left: 50px; }
+.contact .con-block { margin-bottom: 15px; }	
+
+/* ===== MEMBERSHIP ====== */
+.membership .btn.yellow { font-size: 16px; padding: 10px 15px; }
+
+/* ===== VIDEO SLIDER ====== */
+.carousel-nav{padding: 0 40px;}
+.carousel-nav .carousel-cell {height: 140px; width: 100%;}
+.carousel-nav .carousel-cell img{height: 120px;}
+.carousel-nav .flickity-prev-next-button{width:38px; }
+.carousel-nav .flickity-prev-next-button.next{right:0;}
+.carousel-nav .flickity-prev-next-button.previous{left: -15px;}
+}
+
+@media screen and (max-width: 375px) {
+	
+header .logo { max-width: 200px; }
+.mobile-toggle { top: 30px !important; right: 10px !important; }
+.banner .item figure .hide { height: 350px; }
+footer .info ul li { float: left; }
+footer .info ul li { width: 100%; display: block; float: none; text-align: center; }
+footer .info ul { margin-left: 0; }
+
+/* ===== BLOG-DETAILS ====== */
+.blog-details .social-block { text-align: center; }
+.blog-details .social-icons { float: none;  }
+.blog-details .social-block p { float: none; padding: 10px 0 0; }
+
+/* ===== DONATE ====== */
+.donate .donate-block { padding: 40px 15px 0; }	
+.donate .donate-text { padding-left: 0!important;}	
+}
+
+/* -----------------------------------------------------
+    Navifgation Responsive Styles
+----------------------------------------------------- */
+@media screen and (max-width: 991px) {
+    header nav#nav.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    header nav#nav {
+        position: fixed;
+        top:0;
+        left:0;
+        margin-top:0;
+        z-index:990;
+        opacity:0.0;
+        visibility: hidden;
+        height:100%;
+        width:100%;
+        background-color: rgb(0,0,0,0.95);
+        transition:all 0.35s ease-in-out;
+    }
+    
+    .navbar-nav{
+        padding:150px 0;
+        text-align:center;
+    }
+    
+    /* Cross icon */
+    .mobile-toggle {
+        position: absolute;
+        top: 45px;
+        right:15px;
+        z-index:999;
+        display: inline-block;
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.25s;
+        transition-timing-function: linear;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        width: 30px;
+        height: 28px;
+        float:right;
+    }
+    
+    .mobile-toggle:hover {
+        opacity: 0.7;
+    }
+
+    .mobile-toggle:focus {
+        outline:0;
+    }
+
+    .mobile-toggle-box {
+        width: 34px;
+        height: 28px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .mobile-toggle-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+    }
+    
+    .mobile-toggle-inner,
+    .mobile-toggle-inner::before,
+    .mobile-toggle-inner::after {
+        width: 28px;
+        height: 3px;
+        background-color: #f2cf29;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+    
+    .is-active .mobile-toggle-inner,
+    .is-active .mobile-toggle-inner::before,
+    .is-active .mobile-toggle-inner::after {
+        background-color: #fff;
+    }
+
+    .mobile-toggle-inner::before,
+    .mobile-toggle-inner::after {
+        content: "";
+        display: block;
+    }
+    
+    .mobile-toggle-inner::before {
+        top: -9px;
+    }
+    
+    .mobile-toggle-inner::after {
+        bottom: -9px;
+    }
+
+    .mobile-toggle--squeeze .mobile-toggle-inner {
+        -webkit-transition-duration: 0.075s;
+        -ms-transition-duration: 0.075s;
+        transition-duration: 0.075s;
+        -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        -ms-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    
+    .mobile-toggle--squeeze .mobile-toggle-inner::before {
+        -webkit-transition: top 0.075s 0.12s ease,
+        opacity 0.075s ease;
+        -ms-transition: top 0.075s 0.12s ease,
+        opacity 0.075s ease;
+        transition: top 0.075s 0.12s ease,
+        opacity 0.075s ease;
+    }
+    
+    .mobile-toggle--squeeze .mobile-toggle-inner::after {
+        -webkit-transition: bottom 0.075s 0.12s ease,
+        transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        -ms-transition: bottom 0.075s 0.12s ease,
+        transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition: bottom 0.075s 0.12s ease,
+        transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    .mobile-toggle--squeeze.is-active .mobile-toggle-inner {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transition-delay: 0.12s;
+      -ms-transition-delay: 0.12s;
+      transition-delay: 0.12s;
+      -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -ms-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    
+    .mobile-toggle--squeeze.is-active .mobile-toggle-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+    }
+    
+    .mobile-toggle--squeeze.is-active .mobile-toggle-inner::after {
+        bottom: 0;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transition: bottom 0.075s ease,
+        transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -ms-transition: bottom 0.075s ease,
+        transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.075s ease,
+        transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+}

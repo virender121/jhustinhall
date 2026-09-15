@@ -1,0 +1,709 @@
+<!-- =====================================================
+     SHIPPING INFORMATION
+     Converted from WooCommerce form-shipping.php
+====================================================== -->
+
+<div class="woocommerce-shipping-fields">
+
+
+    <!-- =================================================
+         SHIPPING ADDRESS SELECTION
+    ================================================== -->
+
+    <div id="chkBoxList">
+
+
+        <!-- SAME ADDRESS -->
+
+        <h3 id="ship-to-same-address">
+
+            <label
+                class="woocommerce-form__label
+                       woocommerce-form__label-for-checkbox
+                       checkbox"
+            >
+
+                <input
+                    id="ship-to-same-address-checkbox"
+                    class="woocommerce-form__input
+                           woocommerce-form__input-checkbox
+                           input-checkbox"
+                    type="checkbox"
+                    name="ship_to_same_address"
+                    value="1"
+                    checked
+                >
+
+                <span>
+                    Continue with the same address.
+                </span>
+
+            </label>
+
+        </h3>
+
+
+
+        <!-- DIFFERENT ADDRESS -->
+
+        <h3 id="ship-to-different-address">
+
+            <label
+                class="woocommerce-form__label
+                       woocommerce-form__label-for-checkbox
+                       checkbox"
+            >
+
+                <input
+                    id="ship-to-different-address-checkbox"
+                    class="woocommerce-form__input
+                           woocommerce-form__input-checkbox
+                           input-checkbox"
+                    type="checkbox"
+                    name="ship_to_different_address"
+                    value="1"
+                >
+
+                <span>
+                    Ship to a different address?
+                </span>
+
+            </label>
+
+        </h3>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SHIPPING ADDRESS
+    ================================================== -->
+
+    <div
+        class="shipping_address"
+        id="shippingAddress"
+        style="display:none;"
+    >
+
+
+        <div class="woocommerce-shipping-fields__field-wrapper">
+
+
+            <!-- =========================================
+                 FIRST NAME
+            ========================================== -->
+
+            <p
+                class="form-row form-row-first validate-required"
+                id="shipping_first_name_field"
+            >
+
+                <label for="shipping_first_name">
+
+                    First name
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_first_name"
+                        id="shipping_first_name"
+                        autocomplete="given-name"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 LAST NAME
+            ========================================== -->
+
+            <p
+                class="form-row form-row-last validate-required"
+                id="shipping_last_name_field"
+            >
+
+                <label for="shipping_last_name">
+
+                    Last name
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_last_name"
+                        id="shipping_last_name"
+                        autocomplete="family-name"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <div class="clear"></div>
+
+
+
+            <!-- =========================================
+                 COMPANY
+            ========================================== -->
+
+            <p
+                class="form-row form-row-wide"
+                id="shipping_company_field"
+            >
+
+                <label for="shipping_company">
+
+                    Company name
+
+                    <span class="optional">
+                        (optional)
+                    </span>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_company"
+                        id="shipping_company"
+                        autocomplete="organization"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 COUNTRY
+            ========================================== -->
+
+            <p
+                class="form-row form-row-wide validate-required"
+                id="shipping_country_field"
+            >
+
+                <label for="shipping_country">
+
+                    Country / Region
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <select
+                        name="shipping_country"
+                        id="shipping_country"
+                        class="form-control"
+                        autocomplete="country"
+                    >
+
+                        <option value="">
+                            Select a country / region
+                        </option>
+
+                        <option value="US">
+                            United States
+                        </option>
+
+                        <option value="CA">
+                            Canada
+                        </option>
+
+                        <option value="GB">
+                            United Kingdom
+                        </option>
+
+                        <option value="AU">
+                            Australia
+                        </option>
+
+                        <option value="IN">
+                            India
+                        </option>
+
+                    </select>
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 STREET ADDRESS
+            ========================================== -->
+
+            <p
+                class="form-row form-row-wide validate-required"
+                id="shipping_address_1_field"
+            >
+
+                <label for="shipping_address_1">
+
+                    Street address
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_address_1"
+                        id="shipping_address_1"
+                        placeholder="House number and street name"
+                        autocomplete="address-line1"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- ADDRESS LINE 2 -->
+
+            <p
+                class="form-row form-row-wide"
+                id="shipping_address_2_field"
+            >
+
+                <label
+                    for="shipping_address_2"
+                    class="screen-reader-text"
+                >
+                    Apartment, suite, unit, etc.
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_address_2"
+                        id="shipping_address_2"
+                        placeholder="Apartment, suite, unit, etc. (optional)"
+                        autocomplete="address-line2"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 CITY
+            ========================================== -->
+
+            <p
+                class="form-row form-row-wide validate-required"
+                id="shipping_city_field"
+            >
+
+                <label for="shipping_city">
+
+                    Town / City
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_city"
+                        id="shipping_city"
+                        autocomplete="address-level2"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 STATE
+            ========================================== -->
+
+            <p
+                class="form-row form-row-first validate-required"
+                id="shipping_state_field"
+            >
+
+                <label for="shipping_state">
+
+                    State / County
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_state"
+                        id="shipping_state"
+                        autocomplete="address-level1"
+                    >
+
+                </span>
+
+            </p>
+
+
+
+            <!-- =========================================
+                 POSTCODE
+            ========================================== -->
+
+            <p
+                class="form-row form-row-last validate-required"
+                id="shipping_postcode_field"
+            >
+
+                <label for="shipping_postcode">
+
+                    ZIP / Postcode
+
+                    <abbr
+                        class="required"
+                        title="required"
+                    >
+                        *
+                    </abbr>
+
+                </label>
+
+
+                <span class="woocommerce-input-wrapper">
+
+                    <input
+                        type="text"
+                        class="input-text form-control"
+                        name="shipping_postcode"
+                        id="shipping_postcode"
+                        autocomplete="postal-code"
+                    >
+
+                </span>
+
+            </p>
+
+
+            <div class="clear"></div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     ADDITIONAL INFORMATION
+====================================================== -->
+
+<div class="woocommerce-additional-fields">
+
+
+    <h3>
+        Additional information
+    </h3>
+
+
+
+    <div class="woocommerce-additional-fields__field-wrapper">
+
+
+        <!-- ORDER NOTES -->
+
+        <p
+            class="form-row notes"
+            id="order_comments_field"
+        >
+
+            <label for="order_comments">
+
+                Order notes
+
+                <span class="optional">
+                    (optional)
+                </span>
+
+            </label>
+
+
+            <span class="woocommerce-input-wrapper">
+
+                <textarea
+                    name="order_comments"
+                    class="input-text form-control"
+                    id="order_comments"
+                    placeholder="Notes about your order, e.g. special notes for delivery."
+                    rows="5"
+                ></textarea>
+
+            </span>
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SHIPPING JAVASCRIPT
+====================================================== -->
+
+<script>
+
+(function () {
+
+    const sameAddress =
+        document.getElementById(
+            "ship-to-same-address-checkbox"
+        );
+
+    const differentAddress =
+        document.getElementById(
+            "ship-to-different-address-checkbox"
+        );
+
+    const shippingAddress =
+        document.getElementById(
+            "shippingAddress"
+        );
+
+
+    if (
+        !sameAddress ||
+        !differentAddress ||
+        !shippingAddress
+    ) {
+        return;
+    }
+
+
+
+    /* =============================================
+       SHIPPING REQUIRED FIELDS
+    ============================================= */
+
+    const requiredShippingFields = [
+
+        "shipping_first_name",
+        "shipping_last_name",
+        "shipping_country",
+        "shipping_address_1",
+        "shipping_city",
+        "shipping_state",
+        "shipping_postcode"
+
+    ];
+
+
+
+    function setShippingRequired(required) {
+
+        requiredShippingFields.forEach(
+            function (id) {
+
+                const input =
+                    document.getElementById(id);
+
+                if (!input) {
+                    return;
+                }
+
+
+                if (required) {
+
+                    input.setAttribute(
+                        "required",
+                        "required"
+                    );
+
+                } else {
+
+                    input.removeAttribute(
+                        "required"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =============================================
+       USE SAME BILLING ADDRESS
+    ============================================= */
+
+    function useSameAddress() {
+
+        sameAddress.checked = true;
+
+        differentAddress.checked = false;
+
+        shippingAddress.style.display =
+            "none";
+
+        setShippingRequired(false);
+
+    }
+
+
+
+    /* =============================================
+       USE DIFFERENT SHIPPING ADDRESS
+    ============================================= */
+
+    function useDifferentAddress() {
+
+        sameAddress.checked = false;
+
+        differentAddress.checked = true;
+
+        shippingAddress.style.display =
+            "block";
+
+        setShippingRequired(true);
+
+    }
+
+
+
+    /* =============================================
+       SAME ADDRESS CLICK
+    ============================================= */
+
+    sameAddress.addEventListener(
+        "change",
+        function () {
+
+            if (this.checked) {
+
+                useSameAddress();
+
+            } else {
+
+                useDifferentAddress();
+
+            }
+
+        }
+    );
+
+
+
+    /* =============================================
+       DIFFERENT ADDRESS CLICK
+    ============================================= */
+
+    differentAddress.addEventListener(
+        "change",
+        function () {
+
+            if (this.checked) {
+
+                useDifferentAddress();
+
+            } else {
+
+                useSameAddress();
+
+            }
+
+        }
+    );
+
+
+
+    /* INITIAL STATE */
+
+    useSameAddress();
+
+})();
+
+</script>

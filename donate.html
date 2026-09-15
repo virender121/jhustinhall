@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Donate | Jhustin Hall</title>
+
+    <meta
+        name="description"
+        content="Support Jhustin Hall Music and Ministry through your donation.">
+
+
+    <!-- GOOGLE FONT -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- BOOTSTRAP -->
+    <link
+        rel="stylesheet"
+        href="css/bootstrap.min.css">
+
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<div id="header"></div>
+
+
+
+<!-- =====================================================
+     DONATE
+====================================================== -->
+
+<section
+    class="inner-banner donate"
+    style="
+        background-image:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.65)
+        ),
+        url('images/donate-bg.jpg');
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    "
+>
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="content">
+
+        <h1>Donate</h1>
+
+    </div>
+
+
+
+    <div class="container">
+
+
+        <div class="donate-block">
+
+
+            <!-- =========================================
+                 DONATION HEADING
+
+                 Original ACF:
+                 the_field('title')
+            ========================================== -->
+
+            <h2>
+                Make a Donation
+            </h2>
+
+
+
+            <!-- =========================================
+                 DONATION DESCRIPTION
+
+                 Original ACF:
+                 the_field('title_text')
+            ========================================== -->
+
+            <p class="donate-text">
+
+                Your support helps us continue our mission,
+                ministry and community efforts. Every
+                contribution makes a difference.
+
+            </p>
+
+
+
+            <!-- =========================================
+                 DONATION AMOUNT
+            ========================================== -->
+
+            <div class="amount clearfix">
+
+                <p>Select an Amount:</p>
+
+
+                <div class="donation-amounts">
+
+
+                    <button
+                        type="button"
+                        class="donation-amount"
+                        data-amount="10">
+
+                        $10
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="donation-amount"
+                        data-amount="25">
+
+                        $25
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="donation-amount"
+                        data-amount="50">
+
+                        $50
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="donation-amount"
+                        data-amount="100">
+
+                        $100
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- CUSTOM AMOUNT -->
+
+                <div class="custom-donation">
+
+                    <label for="donationAmount">
+                        Or enter a custom amount
+                    </label>
+
+
+                    <div class="amount-input">
+
+                        <span>$</span>
+
+                        <input
+                            type="number"
+                            id="donationAmount"
+                            name="amount"
+                            min="1"
+                            step="0.01"
+                            placeholder="Other Amount">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DONATION FORM
+
+                 Replaces Contact Form 7:
+                 [contact-form-7 id="573"]
+            ========================================== -->
+
+            <form
+                id="donationForm"
+                class="donation-form"
+                method="post"
+            >
+
+
+                <div class="row">
+
+
+                    <!-- FIRST NAME -->
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="first_name"
+                                class="form-control"
+                                placeholder="First Name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LAST NAME -->
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="last_name"
+                                class="form-control"
+                                placeholder="Last Name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Email Address"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-control"
+                                placeholder="Phone Number">
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="donationMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="donationMessage"
+                        name="message"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Leave a message (optional)"></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <div class="donation-submit">
+
+                    <button
+                        type="submit"
+                        class="btn yellow">
+
+                        Donate Now
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div id="footer"></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/components.js"></script>
+
+<script src="js/main.js"></script>
+
+
+
+<!-- =====================================================
+     DONATION AMOUNT SELECTION
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const amountButtons =
+        document.querySelectorAll(".donation-amount");
+
+    const amountInput =
+        document.getElementById("donationAmount");
+
+
+    amountButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            /* Remove previous selection */
+
+            amountButtons.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+
+            /* Select clicked amount */
+
+            this.classList.add("active");
+
+
+            /* Put amount into input */
+
+            amountInput.value =
+                this.getAttribute("data-amount");
+
+        });
+
+    });
+
+
+    /* Remove selected button when
+       custom amount is entered */
+
+    amountInput.addEventListener("input", function () {
+
+        amountButtons.forEach(function (item) {
+
+            item.classList.remove("active");
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>

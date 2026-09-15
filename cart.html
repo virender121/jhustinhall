@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Jhustin Hall</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<div id="header"></div>
+
+
+
+<!-- =====================================================
+     INNER BANNER
+====================================================== -->
+
+<section
+    class="inner-banner"
+    style="
+        background-image:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.65)
+        ),
+        url('images/store-banner.jpg');
+
+        background-position:center;
+        background-size:cover;
+        background-repeat:no-repeat;
+    "
+>
+
+    <div class="content">
+        <h1>Shopping Cart</h1>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CART PAGE
+====================================================== -->
+
+<section class="cart-page">
+
+    <div class="container">
+
+
+        <!-- CONTINUE SHOPPING -->
+
+        <div class="cart-btn">
+
+            <a
+                href="store.html"
+                class="btn"
+            >
+                <i class="fa fa-angle-left"></i>
+                Continue Shopping
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             EMPTY CART
+        ================================================== -->
+
+        <div
+            id="emptyCart"
+            class="empty-cart"
+            style="display:none;"
+        >
+
+            <i class="fa fa-shopping-cart"></i>
+
+            <h2>Your cart is currently empty.</h2>
+
+            <p>
+                Browse our store and add something to your cart.
+            </p>
+
+            <a
+                href="store.html"
+                class="btn yellow"
+            >
+                Return to Store
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CART CONTENT
+        ================================================== -->
+
+        <div id="cartContent">
+
+
+            <div class="cart-table-wrapper">
+
+                <table
+                    class="shop_table shop_table_responsive cart"
+                >
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="product-remove"></th>
+
+                            <th class="product-thumbnail">
+                                Product
+                            </th>
+
+                            <th class="product-name">
+                                Name
+                            </th>
+
+                            <th class="product-price">
+                                Price
+                            </th>
+
+                            <th class="product-quantity">
+                                Quantity
+                            </th>
+
+                            <th class="product-subtotal">
+                                Subtotal
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!--
+                        JavaScript creates cart products here.
+                    -->
+
+                    <tbody id="cartItems"></tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CART BOTTOM
+            ================================================== -->
+
+            <div class="cart-bottom">
+
+
+                <!-- COUPON -->
+
+                <div class="coupon">
+
+                    <h3>Coupon</h3>
+
+                    <div class="coupon-form">
+
+                        <input
+                            type="text"
+                            id="couponCode"
+                            class="input-text"
+                            placeholder="Coupon code"
+                        >
+
+                        <button
+                            type="button"
+                            class="button"
+                            id="applyCoupon"
+                        >
+                            Apply Coupon
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="couponMessage"
+                        class="coupon-message"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- CART TOTALS -->
+
+                <div class="cart-collaterals">
+
+                    <div class="cart_totals">
+
+                        <h2>Cart Totals</h2>
+
+
+                        <table>
+
+                            <tbody>
+
+
+                                <tr class="cart-subtotal">
+
+                                    <th>Subtotal</th>
+
+                                    <td id="cartSubtotal">
+                                        $0.00
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr
+                                    id="discountRow"
+                                    style="display:none;"
+                                >
+
+                                    <th>Discount</th>
+
+                                    <td id="cartDiscount">
+                                        -$0.00
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr class="order-total">
+
+                                    <th>Total</th>
+
+                                    <td>
+
+                                        <strong id="cartTotal">
+                                            $0.00
+                                        </strong>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+
+
+                        <div class="wc-proceed-to-checkout">
+
+                            <a
+                                href="checkout.html"
+                                class="checkout-button btn yellow"
+                                id="checkoutButton"
+                            >
+                                Proceed to Checkout
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div id="footer"></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/components.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/cart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const cartItemsContainer =
+        document.getElementById("cartItems");
+
+    const cartContent =
+        document.getElementById("cartContent");
+
+    const emptyCart =
+        document.getElementById("emptyCart");
+
+    const subtotalElement =
+        document.getElementById("cartSubtotal");
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+    const discountElement =
+        document.getElementById("cartDiscount");
+
+    const discountRow =
+        document.getElementById("discountRow");
+
+    const couponInput =
+        document.getElementById("couponCode");
+
+    const couponButton =
+        document.getElementById("applyCoupon");
+
+    const couponMessage =
+        document.getElementById("couponMessage");
+
+
+    /* =============================================
+       LOAD CART
+    ============================================= */
+
+    let cart = JSON.parse(
+        localStorage.getItem("jhustinCart")
+    ) || [];
+
+
+    let discount = 0;
+
+
+
+    /* =============================================
+       SAVE CART
+    ============================================= */
+
+    function saveCart() {
+
+        localStorage.setItem(
+            "jhustinCart",
+            JSON.stringify(cart)
+        );
+
+        updateCartCount();
+
+    }
+
+
+
+    /* =============================================
+       HEADER CART COUNT
+    ============================================= */
+
+    function updateCartCount() {
+
+        const count = cart.reduce(
+            (total, product) =>
+                total + product.quantity,
+            0
+        );
+
+
+        document
+            .querySelectorAll(".cart-count")
+            .forEach(function (element) {
+
+                element.textContent = count;
+
+            });
+
+    }
+
+
+
+    /* =============================================
+       CURRENCY
+    ============================================= */
+
+    function money(value) {
+
+        return "$" + Number(value).toFixed(2);
+
+    }
+
+
+
+    /* =============================================
+       RENDER CART
+    ============================================= */
+
+    function renderCart() {
+
+        cartItemsContainer.innerHTML = "";
+
+
+        /* EMPTY CART */
+
+        if (cart.length === 0) {
+
+            cartContent.style.display = "none";
+
+            emptyCart.style.display = "block";
+
+            updateCartCount();
+
+            return;
+
+        }
+
+
+        cartContent.style.display = "block";
+
+        emptyCart.style.display = "none";
+
+
+        let subtotal = 0;
+
+
+        cart.forEach(function (product, index) {
+
+            const productSubtotal =
+                product.price * product.quantity;
+
+
+            subtotal += productSubtotal;
+
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.className = "cart_item";
+
+
+            row.innerHTML = `
+
+                <td class="product-remove">
+
+                    <button
+                        type="button"
+                        class="remove"
+                        data-index="${index}"
+                        aria-label="Remove ${escapeHtml(product.name)}"
+                    >
+                        &times;
+                    </button>
+
+                </td>
+
+
+                <td
+                    class="product-thumbnail"
+                    data-title="Product"
+                >
+
+                    <a href="product.html?id=${encodeURIComponent(product.id)}">
+
+                        <img
+                            src="${escapeHtml(product.image)}"
+                            alt="${escapeHtml(product.name)}"
+                        >
+
+                    </a>
+
+                </td>
+
+
+                <td
+                    class="product-name"
+                    data-title="Name"
+                >
+
+                    <a href="product.html?id=${encodeURIComponent(product.id)}">
+
+                        ${escapeHtml(product.name)}
+
+                    </a>
+
+                </td>
+
+
+                <td
+                    class="product-price"
+                    data-title="Price"
+                >
+
+                    ${money(product.price)}
+
+                </td>
+
+
+                <td
+                    class="product-quantity"
+                    data-title="Quantity"
+                >
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="qty-minus"
+                            data-index="${index}"
+                        >
+                            −
+                        </button>
+
+
+                        <input
+                            type="number"
+                            class="qty-input"
+                            data-index="${index}"
+                            min="1"
+                            value="${product.quantity}"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="qty-plus"
+                            data-index="${index}"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </td>
+
+
+                <td
+                    class="product-subtotal"
+                    data-title="Subtotal"
+                >
+
+                    ${money(productSubtotal)}
+
+                </td>
+
+            `;
+
+
+            cartItemsContainer.appendChild(row);
+
+        });
+
+
+
+        /* =============================================
+           TOTAL
+        ============================================= */
+
+        const discountAmount =
+            subtotal * discount;
+
+
+        const finalTotal =
+            Math.max(0, subtotal - discountAmount);
+
+
+        subtotalElement.textContent =
+            money(subtotal);
+
+
+        totalElement.textContent =
+            money(finalTotal);
+
+
+
+        if (discount > 0) {
+
+            discountRow.style.display =
+                "table-row";
+
+
+            discountElement.textContent =
+                "-" + money(discountAmount);
+
+        } else {
+
+            discountRow.style.display =
+                "none";
+
+        }
+
+
+        saveCart();
+
+    }
+
+
+
+    /* =============================================
+       CART BUTTON EVENTS
+    ============================================= */
+
+    cartItemsContainer.addEventListener(
+        "click",
+        function (event) {
+
+
+            /* REMOVE */
+
+            const removeButton =
+                event.target.closest(".remove");
+
+
+            if (removeButton) {
+
+                const index =
+                    Number(removeButton.dataset.index);
+
+
+                cart.splice(index, 1);
+
+
+                renderCart();
+
+                return;
+
+            }
+
+
+
+            /* QUANTITY MINUS */
+
+            const minus =
+                event.target.closest(".qty-minus");
+
+
+            if (minus) {
+
+                const index =
+                    Number(minus.dataset.index);
+
+
+                if (cart[index].quantity > 1) {
+
+                    cart[index].quantity--;
+
+                    renderCart();
+
+                }
+
+                return;
+
+            }
+
+
+
+            /* QUANTITY PLUS */
+
+            const plus =
+                event.target.closest(".qty-plus");
+
+
+            if (plus) {
+
+                const index =
+                    Number(plus.dataset.index);
+
+
+                cart[index].quantity++;
+
+                renderCart();
+
+            }
+
+        }
+    );
+
+
+
+    /* =============================================
+       MANUAL QUANTITY
+    ============================================= */
+
+    cartItemsContainer.addEventListener(
+        "change",
+        function (event) {
+
+
+            if (
+                !event.target.classList.contains(
+                    "qty-input"
+                )
+            ) {
+                return;
+            }
+
+
+            const index =
+                Number(event.target.dataset.index);
+
+
+            let quantity =
+                parseInt(event.target.value);
+
+
+            if (
+                !Number.isInteger(quantity) ||
+                quantity < 1
+            ) {
+
+                quantity = 1;
+
+            }
+
+
+            cart[index].quantity =
+                quantity;
+
+
+            renderCart();
+
+        }
+    );
+
+
+
+    /* =============================================
+       COUPON
+    ============================================= */
+
+    couponButton.addEventListener(
+        "click",
+        function () {
+
+
+            const code =
+                couponInput.value
+                    .trim()
+                    .toUpperCase();
+
+
+            /*
+             * Temporary frontend demo coupon.
+             *
+             * IMPORTANT:
+             * Move coupon validation to backend
+             * before production.
+             */
+
+            if (code === "JHUSTIN10") {
+
+                discount = 0.10;
+
+
+                couponMessage.textContent =
+                    "Coupon applied: 10% discount.";
+
+
+                couponMessage.classList.remove(
+                    "error"
+                );
+
+
+                couponMessage.classList.add(
+                    "success"
+                );
+
+
+                renderCart();
+
+            } else {
+
+                discount = 0;
+
+
+                couponMessage.textContent =
+                    "Invalid coupon code.";
+
+
+                couponMessage.classList.remove(
+                    "success"
+                );
+
+
+                couponMessage.classList.add(
+                    "error"
+                );
+
+
+                renderCart();
+
+            }
+
+        }
+    );
+
+
+
+    /* =============================================
+       BASIC HTML ESCAPING
+    ============================================= */
+
+    function escapeHtml(value) {
+
+        return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+
+    }
+
+
+
+    /* INITIALIZE */
+
+    renderCart();
+
+});
+</script>
+</body>
+
+</html>

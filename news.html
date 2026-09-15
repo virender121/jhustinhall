@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News & Blog</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Copy HTML from your header.php here -->
+  </header>
+
+
+  <!-- INNER BANNER -->
+  <section
+    class="inner-banner news-ban"
+    style="background-image: url('images/news-banner.jpg');"
+  >
+
+    <figure>
+      <img src="images/blog-ban.png" alt="Blog">
+    </figure>
+
+    <div class="content">
+      <h1>News & Blog</h1>
+    </div>
+
+  </section>
+
+
+  <!-- BLOG -->
+  <section
+    class="blog-page"
+    style="background-image: url('images/blogs-bg.jpg');"
+  >
+
+    <div class="container">
+
+      <div class="row">
+
+        <!-- LEFT BLOG COLUMN -->
+        <aside class="col-lg-8 col-md-7">
+
+
+          <!-- BLOG POST 1 -->
+          <div class="blog-block">
+
+            <figure>
+              <img
+                src="images/blog-1.jpg"
+                alt="Blog post"
+                class="img-fluid"
+              >
+            </figure>
+
+            <strong>
+              <i></i>
+              September 14th, 2026
+            </strong>
+
+            <h4>
+              <a href="blog-post-1.html">
+                Example Blog Post Title
+              </a>
+            </h4>
+
+            <p>
+              This is the description of your blog post. In WordPress,
+              this content was coming dynamically from the database.
+              Now you can enter your content directly inside HTML.
+            </p>
+
+            <a href="blog-post-1.html" class="read">
+              Read More
+            </a>
+
+          </div>
+
+
+          <!-- BLOG POST 2 -->
+          <div class="blog-block">
+
+            <figure>
+              <img
+                src="images/blog-2.jpg"
+                alt="Blog post"
+                class="img-fluid"
+              >
+            </figure>
+
+            <strong>
+              <i></i>
+              September 10th, 2026
+            </strong>
+
+            <h4>
+              <a href="blog-post-2.html">
+                Second Blog Post
+              </a>
+            </h4>
+
+            <p>
+              Add your second blog description here.
+            </p>
+
+            <a href="blog-post-2.html" class="read">
+              Read More
+            </a>
+
+          </div>
+
+
+          <!-- BLOG POST 3 -->
+          <div class="blog-block">
+
+            <figure>
+              <img
+                src="images/blog-3.jpg"
+                alt="Blog post"
+                class="img-fluid"
+              >
+            </figure>
+
+            <strong>
+              <i></i>
+              September 5th, 2026
+            </strong>
+
+            <h4>
+              <a href="blog-post-3.html">
+                Third Blog Post
+              </a>
+            </h4>
+
+            <p>
+              Add your third blog description here.
+            </p>
+
+            <a href="blog-post-3.html" class="read">
+              Read More
+            </a>
+
+          </div>
+
+
+          <!-- PAGINATION -->
+          <ul class="page-nation">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+
+        </aside>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="col-lg-4 col-md-5">
+
+          <div class="search-block">
+
+
+            <!-- SEARCH -->
+            <form class="search clearfix">
+
+              <input
+                type="search"
+                class="search-field form-control"
+                placeholder="Search..."
+                id="searchInput"
+              >
+
+              <button
+                type="button"
+                class="btn btn-default right"
+                onclick="searchPosts()"
+              >
+                <span class="glyphicon glyphicon-search white"></span>
+              </button>
+
+            </form>
+
+
+            <h5 class="post-heading">
+              Latest Posts
+            </h5>
+
+
+            <div class="post-block">
+
+
+              <!-- LATEST POST 1 -->
+              <div class="post clearfix">
+
+                <figure>
+                  <img
+                    src="images/blog-1.jpg"
+                    alt="Latest post"
+                  >
+                </figure>
+
+                <div class="content">
+
+                  <p>
+                    <a href="blog-post-1.html">
+                      Example Blog Post Title
+                    </a>
+                  </p>
+
+                  <strong>
+                    September 14th, 2026
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <!-- LATEST POST 2 -->
+              <div class="post clearfix">
+
+                <figure>
+                  <img
+                    src="images/blog-2.jpg"
+                    alt="Latest post"
+                  >
+                </figure>
+
+                <div class="content">
+
+                  <p>
+                    <a href="blog-post-2.html">
+                      Second Blog Post
+                    </a>
+                  </p>
+
+                  <strong>
+                    September 10th, 2026
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <!-- LATEST POST 3 -->
+              <div class="post clearfix">
+
+                <figure>
+                  <img
+                    src="images/blog-3.jpg"
+                    alt="Latest post"
+                  >
+                </figure>
+
+                <div class="content">
+
+                  <p>
+                    <a href="blog-post-3.html">
+                      Third Blog Post
+                    </a>
+                  </p>
+
+                  <strong>
+                    September 5th, 2026
+                  </strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- Copy HTML from footer.php here -->
+  </footer>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function searchPosts() {
+      const value = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+      const posts = document.querySelectorAll(".blog-block");
+
+      posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+          post.style.display = "block";
+        } else {
+          post.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
