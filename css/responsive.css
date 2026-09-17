@@ -113,6 +113,112 @@ header nav#nav.is-active { overflow: scroll; padding-bottom: 40px; }
 header.affix .mobile-toggle { top: 27px !important; }
 header.affix { padding-bottom: 0; }
 header .header_social { float: none; display: block; } 
+/* =========================
+   MOBILE HAMBURGER
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+
+/* Hide mobile navigation by default */
+.mobile-navigation {
+    display: none;
+}
+
+
+
+
+    .main-navigation,
+    .header-social {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        background: #111;
+        z-index: 1000;
+        padding: 90px 30px 40px;
+        overflow-y: auto;
+
+        display: block;
+        transition: right 0.35s ease;
+    }
+
+    /* OPEN MENU */
+    .mobile-navigation.is-active {
+        right: 0;
+    }
+
+    .mobile-navigation ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-navigation ul li {
+        border-bottom: 1px solid #ffd300;
+    }
+
+    .mobile-navigation ul li a {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .mobile-social {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .mobile-social a {
+        color: #fff;
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+
+    /* Hamburger -> X animation */
+
+    .mobile-menu-btn.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 .banner .item { min-height: 650px; }
 .home-about { display: block; }
 .home-about .image-block { background-image: none !important; min-height: auto; width: 100%;overflow: hidden; }

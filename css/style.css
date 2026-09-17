@@ -647,7 +647,7 @@ footer .social-circle img {
    FOOTER VOLUNTEER CTA
 ========================================================= */
 
-.footer-volunteer {
+.volunteer {
     position: relative;
 
     min-height: 210px;
@@ -665,7 +665,7 @@ footer .social-circle img {
 
 /* Yellow overlay */
 
-.footer-volunteer-overlay {
+.volunteer-overlay {
     position: absolute;
     inset: 0;
 
@@ -675,7 +675,7 @@ footer .social-circle img {
 }
 
 
-.footer-volunteer .container {
+.volunteer .container {
     position: relative;
 
     z-index: 2;
@@ -686,7 +686,7 @@ footer .social-circle img {
 
 /* CTA CONTENT */
 
-.footer-volunteer-content {
+.volunteer-content {
     display: flex;
 
     justify-content: space-between;
@@ -700,7 +700,7 @@ footer .social-circle img {
 
 /* CTA HEADING */
 
-.footer-volunteer h2 {
+.volunteer h2 {
     max-width: 780px;
 
     margin: 0;
@@ -720,7 +720,7 @@ footer .social-circle img {
 
 /* JOIN BUTTON */
 
-.footer-join-btn {
+.volunteer-content btn {
     display: inline-flex;
 
     align-items: center;
@@ -770,7 +770,7 @@ footer .social-circle img {
 .site-footer {
     position: relative;
 
-    background: #000000;
+    /* background: #000000; */
 
     color: #ffffff;
 }
@@ -1247,7 +1247,7 @@ footer .social-circle img {
 .inner-banner.news-ban figure { max-width: 1300px; width: 100%; position: absolute; right: 0; left: -40px; margin: 0 auto; text-align: right; bottom: -15px; padding: 0 15px; }
 
 /*======= 08-HOME-ABOUT ==========*/
-.store-heading { background-color: #e7edee;}
+/* .store-heading { background-color: #e7edee;} */
 .home-about { display: flex; flex-direction: row-reverse; padding: 0; position: relative; }
 .home-about:after { content: "";
 background-color: #e7edee; background-repeat: no-repeat; background-position: center;}
@@ -2018,7 +2018,7 @@ background-color: #e7edee; background-repeat: no-repeat; background-position: ce
 }
 
 /*======= 12-MINISTRY ==========*/
-.ministry { text-align: center; position: absolute; background-image: url(images/post-heading-after.png); background-repeat: no-repeat; background-position: center; background-size: 100%; background-size: cover; padding: 60px 0; background-attachment: fixed; }
+.ministry { text-align: center; display:none; position: absolute; background-image: url(images/post-heading-after.png); background-repeat: no-repeat; background-position: center; background-size: 100%; background-size: cover; padding: 60px 0; background-attachment: fixed; }
 .ministry h3 { margin-bottom: 20px; color:#ffffff; text-align:left; }
 .ministry p { color:#ffffff; text-align:left; }
 .ministry p:last-child { text-align:center; }

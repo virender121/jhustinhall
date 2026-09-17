@@ -744,13 +744,34 @@
      JAVASCRIPT
 ======================================================= -->
 
-<script src="js/jquery.min.js"></script>
+<!-- <script src="js/jquery.min.js"></script> -->
 
 <script src="js/bootstrap.min.js"></script>
 
 <script src="js/components.js"></script>
 
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const mobileNav = document.getElementById("mobileNavigation");
+
+    menuBtn.addEventListener("click", function () {
+
+        menuBtn.classList.toggle("is-active");
+        mobileNav.classList.toggle("is-active");
+
+        const isOpen = mobileNav.classList.contains("is-active");
+
+        menuBtn.setAttribute("aria-expanded", isOpen);
+
+        // Prevent page scrolling when menu is open
+        document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+
+});
+</script>
 
 
 </body>
