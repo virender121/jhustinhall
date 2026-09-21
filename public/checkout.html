@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Jhustin Hall</title>
+
+    <meta
+        name="description"
+        content="Complete your order from the Jhustin Hall official store."
+    >
+
+    <!-- GOOGLE FONT -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+
+    <!-- BOOTSTRAP -->
+    <link
+        rel="stylesheet"
+        href="css/bootstrap.min.css"
+    >
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<div id="header"></div>
+
+
+
+<!-- =====================================================
+     INNER BANNER
+====================================================== -->
+
+<section
+    class="inner-banner"
+    style="
+        background-image:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.65)
+        ),
+        url('images/store-banner.jpg');
+
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:cover;
+    "
+>
+
+    <div class="content">
+
+        <h1>Checkout</h1>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BREADCRUMB
+====================================================== -->
+
+<div class="checkout-breadcrumb">
+
+    <div class="container">
+
+        <nav class="woocommerce-breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span>/</span>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+            <span>/</span>
+
+            <span>
+                Checkout
+            </span>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CHECKOUT
+====================================================== -->
+
+<section class="checkout-page">
+
+    <div class="container">
+
+
+        <!-- EMPTY CART -->
+
+        <div
+            id="checkoutEmpty"
+            class="checkout-empty"
+            style="display:none;"
+        >
+
+            <i class="fa fa-shopping-cart"></i>
+
+            <h2>Your cart is empty</h2>
+
+            <p>
+                Add products to your cart before proceeding
+                to checkout.
+            </p>
+
+            <a
+                href="store.html"
+                class="btn yellow"
+            >
+                Return to Store
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CHECKOUT FORM
+        ================================================== -->
+
+        <form
+            name="checkout"
+            id="checkoutForm"
+            class="checkout woocommerce-checkout"
+            novalidate
+        >
+
+
+            <div
+                class="row"
+                id="customer_details"
+            >
+
+
+                <!-- =========================================
+                     LEFT SIDE
+                     BILLING DETAILS
+                ========================================== -->
+
+                <div class="col-md-6 col-sm-6">
+
+
+                    <div class="checkout-section billing-details">
+
+
+                        <h3>Billing Details</h3>
+
+
+
+                        <!-- FIRST / LAST NAME -->
+
+                        <div class="row">
+
+
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+
+                                    <label for="billing_first_name">
+                                        First Name
+                                        <span>*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="billing_first_name"
+                                        name="billing_first_name"
+                                        class="form-control"
+                                        autocomplete="given-name"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+
+                                    <label for="billing_last_name">
+                                        Last Name
+                                        <span>*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="billing_last_name"
+                                        name="billing_last_name"
+                                        class="form-control"
+                                        autocomplete="family-name"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- COMPANY -->
+
+                        <div class="form-group">
+
+                            <label for="billing_company">
+                                Company Name
+                                <small>(optional)</small>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="billing_company"
+                                name="billing_company"
+                                class="form-control"
+                                autocomplete="organization"
+                            >
+
+                        </div>
+
+
+
+                        <!-- COUNTRY -->
+
+                        <div class="form-group">
+
+                            <label for="billing_country">
+                                Country / Region
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="billing_country"
+                                name="billing_country"
+                                class="form-control"
+                                autocomplete="country"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a country
+                                </option>
+
+                                <option value="US">
+                                    United States
+                                </option>
+
+                                <option value="CA">
+                                    Canada
+                                </option>
+
+                                <option value="GB">
+                                    United Kingdom
+                                </option>
+
+                                <option value="AU">
+                                    Australia
+                                </option>
+
+                                <option value="IN">
+                                    India
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-group">
+
+                            <label for="billing_address_1">
+                                Street Address
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="billing_address_1"
+                                name="billing_address_1"
+                                class="form-control"
+                                placeholder="House number and street name"
+                                autocomplete="address-line1"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <input
+                                type="text"
+                                id="billing_address_2"
+                                name="billing_address_2"
+                                class="form-control"
+                                placeholder="Apartment, suite, unit, etc. (optional)"
+                                autocomplete="address-line2"
+                            >
+
+                        </div>
+
+
+
+                        <!-- CITY -->
+
+                        <div class="form-group">
+
+                            <label for="billing_city">
+                                Town / City
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="billing_city"
+                                name="billing_city"
+                                class="form-control"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- STATE / POSTCODE -->
+
+                        <div class="row">
+
+
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+
+                                    <label for="billing_state">
+                                        State / County
+                                        <span>*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="billing_state"
+                                        name="billing_state"
+                                        class="form-control"
+                                        autocomplete="address-level1"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+
+                                    <label for="billing_postcode">
+                                        ZIP / Postcode
+                                        <span>*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="billing_postcode"
+                                        name="billing_postcode"
+                                        class="form-control"
+                                        autocomplete="postal-code"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="billing_phone">
+                                Phone
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="billing_phone"
+                                name="billing_phone"
+                                class="form-control"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="billing_email">
+                                Email Address
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="billing_email"
+                                name="billing_email"
+                                class="form-control"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             SHIPPING ADDRESS
+                        ================================== -->
+
+                        <div class="ship-different-address">
+
+                            <label>
+
+                                <input
+                                    type="checkbox"
+                                    id="shipDifferent"
+                                >
+
+                                Ship to a different address
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div
+                            id="shippingFields"
+                            style="display:none;"
+                        >
+
+
+                            <h3>Shipping Address</h3>
+
+
+                            <div class="row">
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+
+                                        <label for="shipping_first_name">
+                                            First Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="shipping_first_name"
+                                            name="shipping_first_name"
+                                            class="form-control"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+
+                                        <label for="shipping_last_name">
+                                            Last Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="shipping_last_name"
+                                            name="shipping_last_name"
+                                            class="form-control"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="shipping_address">
+                                    Street Address
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="shipping_address"
+                                    name="shipping_address"
+                                    class="form-control"
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="shipping_city">
+                                    Town / City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="shipping_city"
+                                    name="shipping_city"
+                                    class="form-control"
+                                >
+
+                            </div>
+
+
+
+                            <div class="row">
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+
+                                        <label for="shipping_state">
+                                            State
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="shipping_state"
+                                            name="shipping_state"
+                                            class="form-control"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+
+                                        <label for="shipping_postcode">
+                                            ZIP / Postcode
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="shipping_postcode"
+                                            name="shipping_postcode"
+                                            class="form-control"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ORDER NOTES -->
+
+                        <div class="form-group order-notes">
+
+                            <label for="order_comments">
+                                Order Notes
+                                <small>(optional)</small>
+                            </label>
+
+                            <textarea
+                                id="order_comments"
+                                name="order_comments"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Notes about your order, e.g. special delivery instructions."
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     RIGHT SIDE
+                     ORDER REVIEW
+                ========================================== -->
+
+                <div class="col-md-6 col-sm-6">
+
+
+                    <div class="checkout-section order-review-section">
+
+
+                        <h3 id="order_review_heading">
+                            Your Order
+                        </h3>
+
+
+
+                        <div
+                            id="order_review"
+                            class="woocommerce-checkout-review-order"
+                        >
+
+
+                            <table
+                                class="shop_table woocommerce-checkout-review-order-table"
+                            >
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th class="product-name">
+                                            Product
+                                        </th>
+
+                                        <th class="product-total">
+                                            Subtotal
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+
+                                <!-- PRODUCTS INSERTED BY JS -->
+
+                                <tbody id="checkoutProducts">
+
+                                </tbody>
+
+
+
+                                <tfoot>
+
+
+                                    <tr class="cart-subtotal">
+
+                                        <th>
+                                            Subtotal
+                                        </th>
+
+                                        <td id="checkoutSubtotal">
+                                            $0.00
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr class="shipping">
+
+                                        <th>
+                                            Shipping
+                                        </th>
+
+                                        <td>
+                                            <span id="shippingAmount">
+                                                Calculated at checkout
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <tr class="order-total">
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                        <td>
+
+                                            <strong id="checkoutTotal">
+                                                $0.00
+                                            </strong>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </tfoot>
+
+
+                            </table>
+
+
+
+                            <!-- =================================
+                                 PAYMENT
+                            ================================== -->
+
+                            <div
+                                id="payment"
+                                class="woocommerce-checkout-payment"
+                            >
+
+
+                                <h3>Payment</h3>
+
+
+
+                                <div class="payment-method">
+
+
+                                    <label class="payment-option">
+
+                                        <input
+                                            type="radio"
+                                            name="payment_method"
+                                            value="paypal"
+                                            checked
+                                        >
+
+                                        <span>
+
+                                            <strong>
+                                                PayPal
+                                            </strong>
+
+                                            <small>
+                                                Pay securely using PayPal.
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                </div>
+
+
+
+                                <!-- PAYPAL WILL GO HERE LATER -->
+
+                                <div
+                                    id="paypal-button-container"
+                                    style="display:none;"
+                                ></div>
+
+
+
+                                <div class="checkout-privacy">
+
+                                    <p>
+                                        Your personal information will be used
+                                        to process your order and provide
+                                        customer service.
+                                    </p>
+
+                                </div>
+
+
+
+                                <button
+                                    type="submit"
+                                    id="placeOrderButton"
+                                    class="btn yellow place-order-btn"
+                                >
+
+                                    Place Order
+
+                                </button>
+
+
+
+                                <p
+                                    id="checkoutMessage"
+                                    class="checkout-message"
+                                ></p>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div id="footer"></div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/components.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/store-data.js"></script>
+<script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>
