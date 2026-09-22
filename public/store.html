@@ -2,36 +2,44 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Official Store | Jhustin Hall</title>
+    <title>Official Store | Jhustin Hall Music & Ministry</title>
 
     <meta
         name="description"
-        content="Shop books and music from Jhustin Hall."
+        content="Shop official books and music from Jhustin Hall Music & Ministry."
     >
 
-    <!-- GOOGLE FONT -->
+
+    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <!-- FONT AWESOME -->
+
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     >
 
-    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap -->
     <link
         rel="stylesheet"
         href="css/bootstrap.min.css"
     >
 
-    <!-- MAIN CSS -->
+
+    <!-- Main Website CSS -->
     <link
         rel="stylesheet"
         href="css/style.css"
@@ -42,7 +50,669 @@
         href="css/responsive.css"
     >
 
+
+    <!-- =====================================================
+         MODERN STORE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* ==================================================
+           STORE GLOBAL
+        ================================================== */
+
+        .jh-shop {
+            font-family: "Montserrat", sans-serif;
+            background: #f5f3ee;
+            color: #111;
+        }
+
+        .jh-shop * {
+            box-sizing: border-box;
+        }
+
+        .jh-shop-container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+
+        /* ==================================================
+           STORE INTRO
+        ================================================== */
+
+        .jh-shop-intro {
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+
+        .jh-shop-eyebrow {
+            display: block;
+            margin-bottom: 15px;
+
+            color: #b59651;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .jh-shop-intro h2 {
+            max-width: 850px;
+            margin: 0 auto 20px;
+
+            color: #111;
+
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: 800;
+            line-height: 1.08;
+        }
+
+        .jh-shop-intro p {
+            max-width: 650px;
+            margin: 0 auto;
+
+            color: #666;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           CATEGORY NAVIGATION
+        ================================================== */
+
+        .jh-shop-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 35px;
+        }
+
+        .jh-shop-navigation a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 120px;
+            padding: 13px 22px;
+
+            border: 1px solid #ddd8ce;
+
+            color: #222;
+            background: transparent;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition: 0.25s ease;
+        }
+
+        .jh-shop-navigation a:hover,
+        .jh-shop-navigation a.active {
+            border-color: #111;
+            background: #111;
+            color: #fff;
+        }
+
+
+        /* ==================================================
+           CATEGORY SECTION
+        ================================================== */
+
+        .jh-shop-category {
+            padding: 70px 0 110px;
+        }
+
+        .jh-shop-category + .jh-shop-category {
+            padding-top: 100px;
+            background: #111;
+        }
+
+
+        /* ==================================================
+           CATEGORY HEADER
+        ================================================== */
+
+        .jh-shop-category-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+
+            border-bottom: 1px solid #ddd8ce;
+        }
+
+        .jh-shop-category-header h2 {
+            margin: 0;
+
+            color: #111;
+
+            font-size: clamp(35px, 4vw, 54px);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .jh-shop-category-header p {
+            max-width: 450px;
+            margin: 0;
+
+            color: #777;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* MUSIC DARK SECTION */
+
+        .jh-shop-category--music .jh-shop-category-header {
+            border-color: rgba(255,255,255,.13);
+        }
+
+        .jh-shop-category--music .jh-shop-category-header h2 {
+            color: #fff;
+        }
+
+        .jh-shop-category--music .jh-shop-category-header p {
+            color: #999;
+        }
+
+
+        /* ==================================================
+           PRODUCT GRID
+        ================================================== */
+
+        .jh-shop-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 30px;
+        }
+
+
+        /* Books only have 2 products */
+
+        .jh-shop-grid--books {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+        }
+
+
+        /* ==================================================
+           PRODUCT CARD
+        ================================================== */
+
+        .jh-shop-card {
+            position: relative;
+
+            min-width: 0;
+
+            background: #fff;
+
+            overflow: hidden;
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .jh-shop-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,.15);
+        }
+
+
+        /* ==================================================
+           IMAGE
+        ================================================== */
+
+        .jh-shop-image {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 440px;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #292929
+                );
+
+            overflow: hidden;
+        }
+
+        .jh-shop-image img {
+            display: block;
+
+            max-width: 100%;
+            max-height: 100%;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            box-shadow:
+                0 22px 45px rgba(0,0,0,.45);
+
+            transition:
+                transform .5s ease;
+        }
+
+        .jh-shop-card:hover .jh-shop-image img {
+            transform: scale(1.045);
+        }
+
+
+        /* ==================================================
+           BADGE
+        ================================================== */
+
+        .jh-shop-badge {
+            position: absolute;
+
+            top: 22px;
+            left: 22px;
+
+            z-index: 3;
+
+            padding: 8px 14px;
+
+            background: #c6a55d;
+            color: #111;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* ==================================================
+           HOVER OVERLAY
+        ================================================== */
+
+        .jh-shop-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+            padding: 32px;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.82),
+                    transparent 55%
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity .35s ease;
+        }
+
+        .jh-shop-card:hover .jh-shop-overlay {
+            opacity: 1;
+        }
+
+        .jh-shop-overlay span {
+            color: #fff;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transform: translateY(10px);
+
+            transition:
+                transform .35s ease;
+        }
+
+        .jh-shop-card:hover .jh-shop-overlay span {
+            transform: translateY(0);
+        }
+
+        .jh-shop-overlay i {
+            margin-left: 8px;
+        }
+
+
+        /* ==================================================
+           PRODUCT INFORMATION
+        ================================================== */
+
+        .jh-shop-info {
+            padding: 27px 28px 30px;
+        }
+
+        .jh-shop-label {
+            margin-bottom: 9px;
+
+            color: #a88b4a;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .jh-shop-info h3 {
+            min-height: 55px;
+
+            margin: 0 0 22px;
+
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .jh-shop-info h3 a {
+            color: #151515;
+            text-decoration: none;
+
+            transition:
+                color .25s ease;
+        }
+
+        .jh-shop-info h3 a:hover {
+            color: #a88b4a;
+        }
+
+
+        /* ==================================================
+           PRODUCT FOOTER
+        ================================================== */
+
+        .jh-shop-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #eee;
+        }
+
+        .jh-shop-price {
+            color: #111;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .jh-shop-view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 42px;
+            height: 42px;
+
+            flex-shrink: 0;
+
+            background: #111;
+            color: #fff;
+
+            text-decoration: none;
+
+            transition:
+                background .25s ease,
+                color .25s ease,
+                transform .25s ease;
+        }
+
+        .jh-shop-view:hover {
+            background: #c6a55d;
+            color: #111;
+
+            transform: translateX(3px);
+        }
+
+
+        /* ==================================================
+           STORE PROMO
+        ================================================== */
+
+        .jh-shop-promo {
+            position: relative;
+
+            padding: 120px 0;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.68),
+                    rgba(0,0,0,.78)
+                ),
+                url("https://jhustinhallmusic.com/wp-content/uploads/2022/03/home_about.webp");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            text-align: center;
+        }
+
+        .jh-shop-promo-content {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .jh-shop-promo span {
+            display: block;
+
+            margin-bottom: 15px;
+
+            color: #d2af61;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .jh-shop-promo h2 {
+            margin: 0 0 20px;
+
+            color: #fff;
+
+            font-size: clamp(38px, 5vw, 65px);
+            font-weight: 800;
+            line-height: 1.08;
+        }
+
+        .jh-shop-promo p {
+            max-width: 600px;
+
+            margin:
+                0 auto 30px;
+
+            color: rgba(255,255,255,.78);
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .jh-shop-promo-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 16px 28px;
+
+            background: #c6a55d;
+            color: #111;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition: .25s ease;
+        }
+
+        .jh-shop-promo-btn i {
+            margin-left: 10px;
+        }
+
+        .jh-shop-promo-btn:hover {
+            background: #fff;
+            color: #111;
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 991px) {
+
+            .jh-shop-intro {
+                padding-top: 75px;
+            }
+
+            .jh-shop-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .jh-shop-image {
+                height: 400px;
+            }
+
+            .jh-shop-promo {
+                background-attachment: scroll;
+            }
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 767px) {
+
+            .jh-shop-container {
+                width: calc(100% - 32px);
+            }
+
+            .jh-shop-intro {
+                padding: 60px 0 35px;
+            }
+
+            .jh-shop-intro h2 {
+                font-size: 39px;
+            }
+
+            .jh-shop-navigation {
+                flex-wrap: wrap;
+            }
+
+            .jh-shop-navigation a {
+                min-width: 105px;
+            }
+
+            .jh-shop-category {
+                padding: 50px 0 70px;
+            }
+
+            .jh-shop-category + .jh-shop-category {
+                padding-top: 70px;
+            }
+
+            .jh-shop-category-header {
+                display: block;
+
+                margin-bottom: 30px;
+            }
+
+            .jh-shop-category-header h2 {
+                margin-bottom: 15px;
+            }
+
+            .jh-shop-grid,
+            .jh-shop-grid--books {
+                grid-template-columns: 1fr;
+            }
+
+            .jh-shop-image {
+                height: 420px;
+            }
+
+            .jh-shop-info h3 {
+                min-height: auto;
+            }
+
+            .jh-shop-promo {
+                padding: 80px 0;
+            }
+
+        }
+
+
+        /* ==================================================
+           SMALL MOBILE
+        ================================================== */
+
+        @media (max-width: 480px) {
+
+            .jh-shop-image {
+                height: 350px;
+                padding: 30px;
+            }
+
+            .jh-shop-info {
+                padding: 24px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
@@ -56,7 +726,8 @@
 
 
 <!-- =====================================================
-     INNER BANNER
+     EXISTING INNER BANNER
+     about-ban remains unchanged
 ====================================================== -->
 
 <section
@@ -65,7 +736,7 @@
         background-image:
         linear-gradient(
             rgba(0,0,0,0.45),
-            rgba(0,0,0,0.55)
+            rgba(0,0,0,0.58)
         ),
         url('images/store-banner.jpg');
 
@@ -75,15 +746,11 @@
     "
 >
 
-    <!-- Original:
-         images/about-ban.png
-    -->
-
     <figure>
 
         <img
             src="images/about-ban.png"
-            alt="Jhustin Hall"
+            alt="Jhustin Hall Music & Ministry"
         >
 
     </figure>
@@ -91,7 +758,7 @@
 
     <div class="content">
 
-        <h1>Store</h1>
+        <h1>Official Store</h1>
 
     </div>
 
@@ -100,504 +767,686 @@
 
 
 <!-- =====================================================
-     BOOKS
+     MODERN STORE
 ====================================================== -->
 
-<section
-    class="about-jhustin"
-    id="books"
->
+<main class="jh-shop">
 
 
-    <!-- ORIGINAL JHUSTIN IMAGE -->
+    <!-- =================================================
+         INTRO
+    ================================================== -->
 
-    <aside class="imag-block">
+    <section class="jh-shop-intro">
 
-        <figure>
+        <div class="jh-store-container">
 
-            <img
-                src="https://jhustinhallmusic.com/wp-content/uploads/2022/03/jhustin-hall.png"
-                alt="Jhustin Hall"
-            >
+            <span class="jh-shop-eyebrow">
+                Jhustin Hall Music & Ministry
+            </span>
 
-        </figure>
+            <h2>
+                Words. Music. Purpose.
+            </h2>
 
-    </aside>
-
-
-
-    <!-- BOOK PRODUCTS -->
-
-    <aside class="book">
-
-
-        <!--
-            Original ACF:
-
-            <?php the_field('books_title'); ?>
-
-            Replace heading if the original ACF value
-            was different.
-        -->
-
-        <h2>Books</h2>
+            <p>
+                Explore official books and music from Jhustin Hall,
+                created to inspire faith, encourage growth and share
+                a message of purpose.
+            </p>
 
 
-
-        <div class="max clearfix">
-
-
-            <!-- =========================================
-                 BOOK PRODUCT 1
-            ========================================== -->
-
-            <div
-                class="product-card book-product"
-                data-product-id="book-1"
-            >
-
+            <div class="jh-shop-navigation">
 
                 <a
-                    href="product.html?id=book-1"
-                    class="product-image"
+                    href="#jh-books"
+                    class="active"
                 >
-
-                    <img
-                        src="images/hotandcold1.jpg"
-                        alt="Book Product 1"
-                    >
-
+                    Books
                 </a>
 
+                <a href="#jh-music">
+                    Music
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <div class="product-info">
+
+    <!-- =================================================
+         BOOKS
+         Notice: NOT id="books"
+    ================================================== -->
+
+    <section
+        class="jh-shop-category"
+        id="jh-books"
+    >
+
+        <div class="jh-shop-container">
 
 
-                    <h3>
+            <!-- CATEGORY HEADER -->
 
-                        <a href="product.html?id=book-1">
-                            Hot & Cold Part 1
-                        </a>
+            <div class="jh-shop-category-header">
 
-                    </h3>
+                <h2>Books</h2>
+
+                <p>
+                    Discover books written to encourage,
+                    challenge and inspire your journey.
+                </p>
+
+            </div>
 
 
-                    <p class="price">
-                        $00.00
-                    </p>
 
+            <!-- PRODUCTS -->
+
+            <div class="jh-shop-grid jh-shop-grid--books">
+
+
+                <!-- =====================================
+                     BOOK 1
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="book-1"
+                >
 
                     <a
                         href="product.html?id=book-1"
-                        class="btn yellow"
+                        class="jh-shop-image"
                     >
 
-                        View Product
+                        <img
+                            src="images/hotandcold1.jpg"
+                            alt="Hot & Cold Part 1"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Book
+                        </span>
+
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Book
+
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
 
                     </a>
 
 
-                </div>
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Jhustin Hall
+                        </div>
 
 
-            </div>
+                        <h3>
+
+                            <a href="product.html?id=book-1">
+                                Hot & Cold Part 1
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $30.00
+                            </span>
+
+
+                            <a
+                                href="product.html?id=book-1"
+                                class="jh-shop-view"
+                                aria-label="View Hot and Cold Part 1"
+                            >
+
+                                <i class="fa fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
 
 
 
-            <!-- =========================================
-                 BOOK PRODUCT 2
-            ========================================== -->
+                <!-- =====================================
+                     BOOK 2
+                ====================================== -->
 
-            <div
-                class="product-card book-product"
-                data-product-id="book-2"
-            >
-
-
-                <a
-                    href="product.html?id=book-2"
-                    class="product-image"
+                <article
+                    class="jh-shop-card"
+                    data-product-id="book-2"
                 >
-
-                    <img
-                        src="images/hotandcold2.jpg"
-                        alt="Book Product 2"
-                    >
-
-                </a>
-
-
-
-                <div class="product-info">
-
-
-                    <h3>
-
-                        <a href="product.html?id=book-2">
-                            Book Product 2
-                        </a>
-
-                    </h3>
-
-
-                    <p class="price">
-                        $00.00
-                    </p>
-
 
                     <a
                         href="product.html?id=book-2"
-                        class="btn yellow"
+                        class="jh-shop-image"
                     >
 
-                        View Product
+                        <img
+                            src="images/hotandcold2.jpg"
+                            alt="Hot & Cold Part 2"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Book
+                        </span>
+
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Book
+
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
 
                     </a>
 
 
-                </div>
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Jhustin Hall
+                        </div>
+
+
+                        <h3>
+
+                            <a href="product.html?id=book-2">
+                                Hot & Cold Part 2
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $30.00
+                            </span>
+
+
+                            <a
+                                href="product.html?id=book-2"
+                                class="jh-shop-view"
+                                aria-label="View Hot and Cold Part 2"
+                            >
+
+                                <i class="fa fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
 
 
             </div>
 
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MUSIC
+    ================================================== -->
+
+    <section
+        class="jh-shop-category jh-shop-category--music"
+        id="jh-music"
+    >
+
+        <div class="jh-shop-container">
+
+
+            <div class="jh-shop-category-header">
+
+                <h2>Music</h2>
+
+                <p>
+                    Explore official releases from Jhustin Hall
+                    Music & Ministry.
+                </p>
+
+            </div>
+
+
+
+            <div class="jh-shop-grid">
+
+
+                <!-- =====================================
+                     MUSIC 1
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="music-1"
+                >
+
+                    <a
+                        href="product.html?id=music-1"
+                        class="jh-shop-image"
+                    >
+
+                        <img
+                            src="images/hotandcold1.jpg"
+                            alt="Music Product 1"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Music
+                        </span>
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Release
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Official Music
+                        </div>
+
+                        <h3>
+
+                            <a href="product.html?id=music-1">
+                                Music Product 1
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $15.00
+                            </span>
+
+                            <a
+                                href="product.html?id=music-1"
+                                class="jh-shop-view"
+                            >
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     MUSIC 2
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="music-2"
+                >
+
+                    <a
+                        href="product.html?id=music-2"
+                        class="jh-shop-image"
+                    >
+
+                        <img
+                            src="images/hotandcold2.jpg"
+                            alt="Music Product 2"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Music
+                        </span>
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Release
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Official Music
+                        </div>
+
+                        <h3>
+
+                            <a href="product.html?id=music-2">
+                                Music Product 2
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $15.00
+                            </span>
+
+                            <a
+                                href="product.html?id=music-2"
+                                class="jh-shop-view"
+                            >
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     MUSIC 3
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="music-3"
+                >
+
+                    <a
+                        href="product.html?id=music-3"
+                        class="jh-shop-image"
+                    >
+
+                        <img
+                            src="images/hotandcold3.jpg"
+                            alt="Music Product 3"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Music
+                        </span>
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Release
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Official Music
+                        </div>
+
+                        <h3>
+
+                            <a href="product.html?id=music-3">
+                                Music Product 3
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $15.00
+                            </span>
+
+                            <a
+                                href="product.html?id=music-3"
+                                class="jh-shop-view"
+                            >
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     MUSIC 4
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="music-4"
+                >
+
+                    <a
+                        href="product.html?id=music-4"
+                        class="jh-shop-image"
+                    >
+
+                        <img
+                            src="images/hotandcold4.jpg"
+                            alt="Music Product 4"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Music
+                        </span>
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Release
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Official Music
+                        </div>
+
+                        <h3>
+
+                            <a href="product.html?id=music-4">
+                                Music Product 4
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $15.00
+                            </span>
+
+                            <a
+                                href="product.html?id=music-4"
+                                class="jh-shop-view"
+                            >
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =====================================
+                     MUSIC 5
+                ====================================== -->
+
+                <article
+                    class="jh-shop-card"
+                    data-product-id="music-5"
+                >
+
+                    <a
+                        href="product.html?id=music-5"
+                        class="jh-shop-image"
+                    >
+
+                        <img
+                            src="images/hotandcold5.jpg"
+                            alt="Music Product 5"
+                        >
+
+                        <span class="jh-shop-badge">
+                            Music
+                        </span>
+
+                        <div class="jh-shop-overlay">
+
+                            <span>
+                                View Release
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="jh-shop-info">
+
+                        <div class="jh-shop-label">
+                            Official Music
+                        </div>
+
+                        <h3>
+
+                            <a href="product.html?id=music-5">
+                                Music Product 5
+                            </a>
+
+                        </h3>
+
+
+                        <div class="jh-shop-card-footer">
+
+                            <span class="jh-shop-price">
+                                $15.00
+                            </span>
+
+                            <a
+                                href="product.html?id=music-5"
+                                class="jh-shop-view"
+                            >
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
 
         </div>
 
-
-    </aside>
-
-
-</section>
+    </section>
 
 
 
-<!-- =====================================================
-     OFFICIAL MUSIC STORE
-====================================================== -->
+    <!-- =================================================
+         PROMOTIONAL / BRAND SECTION
+    ================================================== -->
 
-<section
-    class="official-store"
-    id="music"
-    style="
-        background-image:
-        linear-gradient(
-            rgba(0,0,0,0.65),
-            rgba(0,0,0,0.65)
-        ),
-        url('https://jhustinhallmusic.com/wp-content/uploads/2022/03/home_about.webp');
+    <section class="jh-shop-promo">
 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    "
->
+        <div class="jh-shop-container">
 
+            <div class="jh-shop-promo-content">
 
-    <div class="container">
+                <span>
+                    Music With A Message
+                </span>
 
-        <h2>Music</h2>
+                <h2>
+                    Listen. Believe. Be Inspired.
+                </h2>
 
-    </div>
-
-
-
-    <div class="store-block clearfix">
-
-
-        <!-- =============================================
-             MUSIC PRODUCT 1
-        ============================================== -->
-
-        <div
-            class="product-card music-product"
-            data-product-id="music-1"
-        >
-
-
-            <a
-                href="product.html?id=music-1"
-                class="product-image"
-            >
-
-                <img
-                    src="images/hotandcold1.jpg"
-                    alt="Music Product 1"
-                >
-
-            </a>
-
-
-
-            <div class="product-info">
-
-
-                <h3>
-
-                    <a href="product.html?id=music-1">
-                        Music Product 1
-                    </a>
-
-                </h3>
-
-
-                <p class="price">
-                    $00.00
+                <p>
+                    Stay connected with Jhustin Hall Music & Ministry
+                    and listen to official music on Spotify.
                 </p>
 
-
                 <a
-                    href="product.html?id=music-1"
-                    class="btn yellow"
+                    href="https://open.spotify.com/artist/1YQIT518DskrvHFeXiHwSE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="jh-shop-promo-btn"
                 >
 
-                    View Product
+                    Listen on Spotify
+
+                    <i class="fa fa-spotify"></i>
 
                 </a>
 
-
             </div>
-
 
         </div>
 
+    </section>
 
 
-        <!-- =============================================
-             MUSIC PRODUCT 2
-        ============================================== -->
-
-        <div
-            class="product-card music-product"
-            data-product-id="music-2"
-        >
-
-
-            <a
-                href="product.html?id=music-2"
-                class="product-image"
-            >
-
-                <img
-                    src="images/hotandcold2.jpg"
-                    alt="Music Product 2"
-                >
-
-            </a>
-
-
-
-            <div class="product-info">
-
-
-                <h3>
-
-                    <a href="product.html?id=music-2">
-                        Music Product 2
-                    </a>
-
-                </h3>
-
-
-                <p class="price">
-                    $00.00
-                </p>
-
-
-                <a
-                    href="product.html?id=music-2"
-                    class="btn yellow"
-                >
-
-                    View Product
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             MUSIC PRODUCT 3
-        ============================================== -->
-
-        <div
-            class="product-card music-product"
-            data-product-id="music-3"
-        >
-
-
-            <a
-                href="product.html?id=music-3"
-                class="product-image"
-            >
-
-                <img
-                    src="images/hotandcold3.jpg"
-                    alt="Music Product 3"
-                >
-
-            </a>
-
-
-
-            <div class="product-info">
-
-
-                <h3>
-
-                    <a href="product.html?id=music-3">
-                        Music Product 3
-                    </a>
-
-                </h3>
-
-
-                <p class="price">
-                    $00.00
-                </p>
-
-
-                <a
-                    href="product.html?id=music-3"
-                    class="btn yellow"
-                >
-
-                    View Product
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             MUSIC PRODUCT 4
-        ============================================== -->
-
-        <div
-            class="product-card music-product"
-            data-product-id="music-4"
-        >
-
-
-            <a
-                href="product.html?id=music-4"
-                class="product-image"
-            >
-
-                <img
-                    src="images/hotandcold4.jpg"
-                    alt="Music Product 4"
-                >
-
-            </a>
-
-
-
-            <div class="product-info">
-
-
-                <h3>
-
-                    <a href="product.html?id=music-4">
-                        Music Product 4
-                    </a>
-
-                </h3>
-
-
-                <p class="price">
-                    $00.00
-                </p>
-
-
-                <a
-                    href="product.html?id=music-4"
-                    class="btn yellow"
-                >
-
-                    View Product
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             MUSIC PRODUCT 5
-        ============================================== -->
-
-        <div
-            class="product-card music-product"
-            data-product-id="music-5"
-        >
-
-
-            <a
-                href="product.html?id=music-5"
-                class="product-image"
-            >
-
-                <img
-                    src="images/hotandcold5.jpg"
-                    alt="Music Product 5"
-                >
-
-            </a>
-
-
-
-            <div class="product-info">
-
-
-                <h3>
-
-                    <a href="product.html?id=music-5">
-                        Music Product 5
-                    </a>
-
-                </h3>
-
-
-                <p class="price">
-                    $00.00
-                </p>
-
-
-                <a
-                    href="product.html?id=music-5"
-                    class="btn yellow"
-                >
-
-                    View Product
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
+</main>
 
 
 
@@ -613,13 +1462,67 @@
      JAVASCRIPT
 ====================================================== -->
 
-<!-- <script src="js/jquery.min.js"></script> -->
+<script src="js/jquery.min.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
 
 <script src="js/components.js"></script>
 
-<!-- <script src="js/style.js"></script> -->
+<script src="js/main.js"></script>
+
+
+
+<!-- =====================================================
+     SMOOTH CATEGORY SCROLL
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const links =
+        document.querySelectorAll(".jh-shop-navigation a");
+
+
+    links.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId =
+                this.getAttribute("href");
+
+            const target =
+                document.querySelector(targetId);
+
+
+            if (!target) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+
+            links.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+
+            this.classList.add("active");
+
+        });
+
+    });
+
+});
+
+</script>
 
 
 </body>

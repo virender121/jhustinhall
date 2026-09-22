@@ -1,3 +1,419 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product | Jhustin Hall</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/style.css"></head><body><div id="header"></div><main class="container" style="padding:70px 15px"><div id="product"><p>Loading product…</p></div></main><div id="footer"></div><script src="js/components.js"></script><script src="js/store-data.js"></script><script>
-(async()=>{const id=new URLSearchParams(location.search).get('id');const r=await fetch('/api/products/'+encodeURIComponent(id||''));if(!r.ok){product.innerHTML='<h2>Product not found</h2>';return}const p=await r.json();product.innerHTML=`<div class="row"><div class="col-md-6"><img src="${p.image}" alt="" style="max-width:100%"></div><div class="col-md-6"><h1>${p.name}</h1><h3>${Store.money(p.price,p.currency)}</h3><p>${p.description||''}</p><label>Quantity <input id="qty" type="number" min="1" max="20" value="1" style="width:80px"></label><br><br><button class="btn yellow" id="add">Add to Cart</button> <button class="btn yellow" id="buy">Buy Now</button></div></div>`;add.onclick=()=>{Store.add(p.id,+qty.value||1);location.href='cart.html'};buy.onclick=()=>{Store.add(p.id,+qty.value||1);location.href='checkout.html'};})();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Product | Jhustin Hall</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+
+    <!-- PRODUCT PAGE -->
+    <main class="jh-product-page">
+
+        <div class="jh-product-container">
+
+            <!-- Breadcrumb -->
+            <div class="jh-product-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="store.html">Store</a>
+                <span>/</span>
+                <span id="breadcrumb-name">Product</span>
+            </div>
+
+
+            <!-- PRODUCT CONTENT -->
+            <div id="product">
+
+                <div class="jh-product-loading">
+                    <div class="jh-loading-circle"></div>
+                    <p>Loading product...</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+
+    <script src="js/components.js"></script>
+    <script src="js/store-data.js"></script>
+
+    <script>
+        (async () => {
+
+            const productContainer = document.getElementById("product");
+
+            const id = new URLSearchParams(window.location.search).get("id");
+
+            if (!id) {
+                showNotFound();
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    "/api/products/" + encodeURIComponent(id)
+                );
+
+                if (!response.ok) {
+                    showNotFound();
+                    return;
+                }
+
+                const p = await response.json();
+
+
+                /* ===============================
+                   UPDATE PAGE TITLE
+                =============================== */
+
+                document.title = `${p.name} | Jhustin Hall`;
+
+                const breadcrumbName =
+                    document.getElementById("breadcrumb-name");
+
+                if (breadcrumbName) {
+                    breadcrumbName.textContent = p.name;
+                }
+
+
+                /* ===============================
+                   PRODUCT HTML
+                =============================== */
+
+                productContainer.innerHTML = `
+
+                    <section class="jh-product-layout">
+
+                        <!-- PRODUCT IMAGE -->
+                        <div class="jh-product-visual">
+
+                            <div class="jh-product-image-wrap">
+
+                                <span class="jh-product-badge">
+                                    OFFICIAL STORE
+                                </span>
+
+                                <img
+                                    src="${p.image}"
+                                    alt="${p.name}"
+                                    class="jh-product-image"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRODUCT DETAILS -->
+                        <div class="jh-product-details">
+
+                            <span class="jh-product-eyebrow">
+                                JHUSTIN HALL • OFFICIAL MERCHANDISE
+                            </span>
+
+                            <h1>${p.name}</h1>
+
+                            <div class="jh-product-price">
+                                ${Store.money(p.price, p.currency)}
+                            </div>
+
+
+                            <div class="jh-product-divider"></div>
+
+
+                            <div class="jh-product-description">
+                                ${p.description || "Official Jhustin Hall merchandise."}
+                            </div>
+
+
+                            <!-- QUANTITY -->
+                            <div class="jh-product-purchase">
+
+                                <div class="jh-quantity-section">
+
+                                    <span class="jh-field-label">
+                                        QUANTITY
+                                    </span>
+
+                                    <div class="jh-quantity">
+
+                                        <button
+                                            type="button"
+                                            id="qtyMinus"
+                                            aria-label="Decrease quantity">
+                                            −
+                                        </button>
+
+                                        <input
+                                            id="qty"
+                                            type="number"
+                                            min="1"
+                                            max="20"
+                                            value="1"
+                                            readonly
+                                        >
+
+                                        <button
+                                            type="button"
+                                            id="qtyPlus"
+                                            aria-label="Increase quantity">
+                                            +
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- BUTTONS -->
+                                <div class="jh-product-actions">
+
+                                    <button
+                                        class="jh-btn jh-btn-primary"
+                                        id="add">
+
+                                        <span>Add to Cart</span>
+
+                                        <span class="jh-btn-arrow">
+                                            →
+                                        </span>
+
+                                    </button>
+
+
+                                    <button
+                                        class="jh-btn jh-btn-secondary"
+                                        id="buy">
+
+                                        Buy Now
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- FEATURES -->
+                            <div class="jh-product-features">
+
+                                <div class="jh-feature">
+
+                                    <div class="jh-feature-icon">
+                                        ✓
+                                    </div>
+
+                                    <div>
+                                        <strong>Official Product</strong>
+                                        <span>
+                                            Authentic Jhustin Hall merchandise
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="jh-feature">
+
+                                    <div class="jh-feature-icon">
+                                        ↗
+                                    </div>
+
+                                    <div>
+                                        <strong>Secure Checkout</strong>
+                                        <span>
+                                            Safe and protected payment
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="jh-feature">
+
+                                    <div class="jh-feature-icon">
+                                        ♫
+                                    </div>
+
+                                    <div>
+                                        <strong>Support the Ministry</strong>
+                                        <span>
+                                            Your purchase supports the mission
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="jh-product-note">
+
+                                <span></span>
+
+                                <p>
+                                    Thank you for supporting Jhustin Hall
+                                    Music & Ministry.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                `;
+
+
+                /* ===============================
+                   QUANTITY
+                =============================== */
+
+                const qty = document.getElementById("qty");
+
+                document
+                    .getElementById("qtyMinus")
+                    .addEventListener("click", () => {
+
+                        const current =
+                            parseInt(qty.value) || 1;
+
+                        if (current > 1) {
+                            qty.value = current - 1;
+                        }
+
+                    });
+
+
+                document
+                    .getElementById("qtyPlus")
+                    .addEventListener("click", () => {
+
+                        const current =
+                            parseInt(qty.value) || 1;
+
+                        if (current < 20) {
+                            qty.value = current + 1;
+                        }
+
+                    });
+
+
+                /* ===============================
+                   ADD TO CART
+                =============================== */
+
+                document
+                    .getElementById("add")
+                    .addEventListener("click", function () {
+
+                        Store.add(
+                            p.id,
+                            parseInt(qty.value) || 1
+                        );
+
+                        this.classList.add("added");
+
+                        const text =
+                            this.querySelector("span:first-child");
+
+                        text.textContent = "Added to Cart ✓";
+
+                        setTimeout(() => {
+
+                            window.location.href =
+                                "cart.html";
+
+                        }, 500);
+
+                    });
+
+
+                /* ===============================
+                   BUY NOW
+                =============================== */
+
+                document
+                    .getElementById("buy")
+                    .addEventListener("click", () => {
+
+                        Store.add(
+                            p.id,
+                            parseInt(qty.value) || 1
+                        );
+
+                        window.location.href =
+                            "checkout.html";
+
+                    });
+
+
+            } catch (error) {
+
+                console.error(
+                    "Product loading error:",
+                    error
+                );
+
+                showNotFound();
+
+            }
+
+
+            /* ===============================
+               PRODUCT NOT FOUND
+            =============================== */
+
+            function showNotFound() {
+
+                productContainer.innerHTML = `
+
+                    <div class="jh-product-not-found">
+
+                        <span>404</span>
+
+                        <h1>Product Not Found</h1>
+
+                        <p>
+                            The product you're looking for
+                            isn't available.
+                        </p>
+
+                        <a
+                            href="store.html"
+                            class="jh-btn jh-btn-primary">
+
+                            Return to Store →
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+
+        })();
+    </script>
+
+</body>
+</html>

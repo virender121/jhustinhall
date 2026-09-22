@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Insert header first
             header.innerHTML = html;
+            updateHeaderCartCount();
 
             // IMPORTANT:
             // Find menu elements AFTER header has loaded
@@ -128,5 +129,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
     
+    // ==========================================
+// GLOBAL CART COUNT
+// ==========================================
+
+function updateHeaderCartCount() {
+
+    const CART_KEY = "jh_cart";
+
+    let cart = [];
+
+    try {
+        cart = JSON.parse(
+            localStorage.getItem(CART_KEY)
+        ) || [];
+    } catch (error) {
+        console.error("Cart read error:", error);
+        cart = [];
+    }
+
+    // Total quantity, not just number of products
+    const count = cart.reduce(function (total, item) {
+        return total + Number(item.quantity || 0);
+    }, 0);
+
+    document
+        .querySelectorAll(".cart-count")
+        .forEach(function (element) {
+            element.textContent = count;
+        });
+}
+
 
 });

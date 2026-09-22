@@ -1177,7 +1177,8 @@ footer .social-circle img {
 /* Controlled Typography Content Blocks */
 #banner .content { 
     position: relative;
-    text-align: start; 
+    text-align: start;
+    height: auto;
     max-width: 950px; 
     color: #ffffff !important;
 }
@@ -2486,6 +2487,392 @@ background-color: #e7edee; background-repeat: no-repeat; background-position: ce
 .membership .gallery .flickity-prev-next-button.previous { left: 15px; }
 .membership .gallery .flickity-prev-next-button.next { right: 15px; }
 .membership .gallery .flickity-prev-next-button.next:after { content: "›"; }
+/* =========================================================
+   JHUSTIN HALL MODERN STORE — BOOKS
+========================================================= */
+
+.jh-store-books {
+    position: relative;
+    padding: 110px 0 120px;
+    background: #f5f3ee;
+    overflow: hidden;
+}
+
+.jh-store-container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.jh-store-heading {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.jh-store-eyebrow {
+    display: block;
+    margin-bottom: 14px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: #b79a58;
+}
+
+.jh-store-heading h2 {
+    margin: 0 0 18px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 800;
+    line-height: 1;
+
+    color: #111;
+}
+
+.jh-store-heading p {
+    max-width: 600px;
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.jh-store-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.jh-store-card {
+    position: relative;
+
+    background: #fff;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.jh-store-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.jh-store-image {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 500px;
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #292929
+        );
+
+    overflow: hidden;
+}
+
+.jh-store-image img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.55s ease;
+}
+
+.jh-store-card:hover .jh-store-image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================
+   BOOK BADGE
+========================= */
+
+.jh-store-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    z-index: 3;
+
+    padding: 9px 15px;
+
+    background: #c5a45d;
+
+    color: #111;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.jh-store-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8),
+            transparent 55%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+.jh-store-card:hover .jh-store-overlay {
+    opacity: 1;
+}
+
+.jh-store-overlay span {
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transform: translateY(12px);
+
+    transition: transform 0.35s ease;
+}
+
+.jh-store-card:hover .jh-store-overlay span {
+    transform: translateY(0);
+}
+
+.jh-store-overlay i {
+    margin-left: 10px;
+}
+
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
+.jh-store-info {
+    padding: 30px 32px 32px;
+}
+
+.jh-store-category {
+    margin-bottom: 10px;
+
+    color: #a68a4c;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.jh-store-info h3 {
+    margin: 0 0 25px;
+
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.jh-store-info h3 a {
+    color: #171717;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.jh-store-info h3 a:hover {
+    color: #a98a45;
+}
+
+
+/* =========================
+   PRICE / ARROW
+========================= */
+
+.jh-store-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #ececec;
+}
+
+.jh-store-price {
+    color: #111;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.jh-store-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    background: #111;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.jh-store-arrow:hover {
+    background: #c5a45d;
+    color: #111;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .jh-store-books {
+        padding: 80px 0;
+    }
+
+    .jh-store-image {
+        height: 420px;
+        padding: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .jh-store-books {
+        padding: 65px 0 75px;
+    }
+
+    .jh-store-container {
+        width: calc(100% - 32px);
+    }
+
+    .jh-store-heading {
+        margin-bottom: 35px;
+    }
+
+    .jh-store-heading h2 {
+        font-size: 42px;
+    }
+
+    .jh-store-heading p {
+        font-size: 14px;
+    }
+
+    .jh-store-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .jh-store-image {
+        height: 420px;
+        padding: 35px;
+    }
+
+    .jh-store-info {
+        padding: 25px;
+    }
+
+    .jh-store-info h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .jh-store-image {
+        height: 350px;
+        padding: 30px;
+    }
+
+}
+
 /* ===== 17-BLOG ====== */
 .blog-page { background-repeat: no-repeat; background-position: top; background-size: 100% 100%; padding: 84px 0 111px; }
 .blog-page .search { margin: 20px 0 15px; }
@@ -2659,7 +3046,776 @@ background-color: #e7edee; background-repeat: no-repeat; background-position: ce
     margin: auto;
 }
 
-/*========= Product ========*/
+/* =========================================================
+   JHUSTIN HALL — PRODUCT PAGE
+   BRAND COLORS:
+   Yellow: #f2cf29
+   Black:  #1e1d1d
+   Dark:   #191919
+========================================================= */
+
+.jh-product-page {
+    min-height: 80vh;
+    padding: 70px 0 120px;
+    background: #191919;
+}
+
+.jh-product-container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.jh-product-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+.jh-product-breadcrumb a {
+    color: #999;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.jh-product-breadcrumb a:hover {
+    color: #f2cf29;
+}
+
+.jh-product-breadcrumb span:last-child {
+    color: #f2cf29;
+}
+
+
+/* =========================================================
+   PRODUCT LAYOUT
+========================================================= */
+
+.jh-product-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(50px, 7vw, 100px);
+    align-items: center;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.jh-product-visual {
+    width: 100%;
+}
+
+.jh-product-image-wrap {
+    position: relative;
+
+    min-height: 590px;
+    padding: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #101010;
+
+    overflow: hidden;
+}
+
+
+/* YELLOW DECORATIVE SHAPE */
+
+.jh-product-image-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #f2cf29;
+
+    border-radius: 50%;
+
+    opacity: 0.9;
+}
+
+
+/* IMAGE */
+
+.jh-product-image {
+    position: relative;
+    z-index: 2;
+
+    max-width: 100%;
+    max-height: 500px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 25px 25px rgba(0, 0, 0, 0.18)
+    );
+
+    transition: 0.4s ease;
+}
+
+.jh-product-image-wrap:hover .jh-product-image {
+    transform: translateY(-6px) scale(1.025);
+
+    filter: drop-shadow(
+        0 35px 35px rgba(0, 0, 0, 0.22)
+    );
+}
+
+
+/* OFFICIAL STORE BADGE */
+
+.jh-product-badge {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    z-index: 5;
+
+    padding: 10px 16px;
+
+    background: #f2cf29;
+    color: #fff;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS
+========================================================= */
+
+.jh-product-details {
+    max-width: 570px;
+}
+
+
+/* SMALL LABEL */
+
+.jh-product-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #191919;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* PRODUCT TITLE */
+
+.jh-product-details h1 {
+    margin: 0 0 20px;
+
+    color: #191919;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.jh-product-price {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background: #f2cf29;
+
+    color: #191919;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.jh-product-divider {
+    width: 100%;
+    height: 2px;
+
+    margin: 30px 0;
+
+    background: #191919;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.jh-product-description {
+    max-width: 520px;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PURCHASE
+========================================================= */
+
+.jh-product-purchase {
+    margin-top: 35px;
+}
+
+.jh-field-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #191919;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.jh-quantity {
+    display: inline-flex;
+    align-items: center;
+
+    height: 52px;
+
+    border: 3px solid #1e1d1d;
+
+    background: #fff;
+}
+
+.jh-quantity button {
+    width: 48px;
+    height: 46px;
+
+    border: 0;
+
+    background: transparent;
+    color: #191919;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.jh-quantity button:hover {
+    background: #f2cf29;
+}
+
+.jh-quantity input {
+    width: 55px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    text-align: center;
+
+    color: #191919;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    appearance: textfield;
+}
+
+.jh-quantity input::-webkit-inner-spin-button,
+.jh-quantity input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+
+/* =========================================================
+   PRODUCT ACTIONS
+========================================================= */
+
+.jh-product-actions {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+   MATCHES EXISTING JHUSTIN HALL BUTTON STYLE
+========================================================= */
+
+.jh-btn {
+    min-height: 58px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 13px 30px;
+
+    border: 3px solid #000000;
+
+    border-radius: 0;
+
+    background-color: transparent;
+
+    color: #1e1d1d;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+.jh-btn-primary {
+    background: #f2cf29;
+
+    border-color: #f2cf29;
+
+    color: #000;
+}
+
+.jh-btn-primary:hover {
+    background: #1e1d1d;
+
+    border-color: #1e1d1d;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BUY NOW
+========================================================= */
+
+.jh-btn-secondary {
+    background: transparent;
+
+    border-color: #1e1d1d;
+
+    color: #191919;
+}
+
+.jh-btn-secondary:hover {
+    background: #1e1d1d;
+
+    border-color: #1e1d1d;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* BUTTON ARROW */
+
+.jh-btn-arrow {
+    font-size: 20px;
+
+    transition: transform 0.2s ease;
+}
+
+.jh-btn:hover .jh-btn-arrow {
+    transform: translateX(5px);
+}
+
+
+/* ADDED STATE */
+
+.jh-btn-primary.added {
+    background: #191919;
+    border-color: #191919;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.jh-product-features {
+    display: grid;
+
+    gap: 17px;
+
+    margin-top: 40px;
+    padding-top: 30px;
+
+    border-top: 2px solid #191919;
+}
+
+.jh-feature {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* FEATURE ICON */
+
+.jh-feature-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f2cf29;
+
+    color: #191919;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.jh-feature strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #191919;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.jh-feature span {
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SUPPORT NOTE
+========================================================= */
+
+.jh-product-note {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.jh-product-note > span {
+    width: 35px;
+    height: 3px;
+
+    flex-shrink: 0;
+
+    background: #f2cf29;
+}
+
+.jh-product-note p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.jh-product-loading {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.jh-loading-circle {
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid #ddd;
+
+    border-top-color: #f2cf29;
+
+    border-radius: 50%;
+
+    animation: jhSpin 0.7s linear infinite;
+}
+
+@keyframes jhSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.jh-product-loading p {
+    color: #191919;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PRODUCT NOT FOUND
+========================================================= */
+
+.jh-product-not-found {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.jh-product-not-found > span {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: #f2cf29;
+
+    color: #191919;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.jh-product-not-found h1 {
+    margin: 20px 0 15px;
+
+    color: #191919;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: clamp(40px, 6vw, 70px);
+
+    font-weight: 700;
+}
+
+.jh-product-not-found p {
+    margin-bottom: 30px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .jh-product-page {
+        padding-top: 50px;
+    }
+
+    .jh-product-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .jh-product-details {
+        max-width: 100%;
+    }
+
+    .jh-product-image-wrap {
+        min-height: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .jh-product-page {
+        padding: 35px 0 80px;
+    }
+
+    .jh-product-container {
+        width: 92%;
+    }
+
+    .jh-product-breadcrumb {
+        margin-bottom: 25px;
+
+        font-size: 10px;
+    }
+
+    .jh-product-layout {
+        gap: 35px;
+    }
+
+
+    /* IMAGE */
+
+    .jh-product-image-wrap {
+        min-height: 390px;
+
+        padding: 45px 25px;
+    }
+
+    .jh-product-image-wrap::before {
+        width: 260px;
+        height: 260px;
+    }
+
+    .jh-product-image {
+        max-height: 330px;
+    }
+
+    .jh-product-badge {
+        top: 15px;
+        left: 15px;
+
+        font-size: 8px;
+
+        padding: 8px 10px;
+    }
+
+
+    /* DETAILS */
+
+    .jh-product-eyebrow {
+        font-size: 9px;
+    }
+
+    .jh-product-details h1 {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+    .jh-product-price {
+        font-size: 21px;
+    }
+
+    .jh-product-description {
+        font-size: 14px;
+    }
+
+
+    /* BUTTONS */
+
+    .jh-product-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .jh-btn {
+        width: 100%;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* ========= Product ========
 
 .summary.entry-summary .product_title{ color: #ffd300; font-size: 40px; }
 .product_meta .posted_in { display: none; }
@@ -2694,7 +3850,7 @@ background-color: #e7edee; background-repeat: no-repeat; background-position: ce
 .woocommerce-checkout .woocommerce-breadcrumb, .woocommerce-checkout .woocommerce-breadcrumb a{color:#fff;}
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active{border-radius: 0; border: none; background-color: #ffd300; }
 .woocommerce div.product .woocommerce-tabs ul.tabs li{ border-radius: 0; border: none; background-color: transparent; }
-.woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before{content: none;}
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before{content: none;} */
 /*cart*/
 /* .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals{max-width: 400px;} 
 .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals { margin-top: 50px; }
@@ -2759,6 +3915,12 @@ background-color: #e7edee; background-repeat: no-repeat; background-position: ce
     color: #777;
 
     font-size: 14px;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: none !important;
+    content: none !important;
 }
 
 
