@@ -332,118 +332,207 @@
 <script src="js/cart.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 
-    const cartItemsContainer =
-        document.getElementById("cartItems");
+    const CART_KEY = "jh_cart";
 
-    const cartContent =
-        document.getElementById("cartContent");
+    const cartItemsContainer = document.getElementById("cartItems");
+    const cartContent = document.getElementById("cartContent");
+    const emptyCart = document.getElementById("emptyCart");
 
-    const emptyCart =
-        document.getElementById("emptyCart");
+    const subtotalElement = document.getElementById("cartSubtotal");
+    const totalElement = document.getElementById("cartTotal");
 
-    const subtotalElement =
-        document.getElementById("cartSubtotal");
+    const discountElement = document.getElementById("cartDiscount");
+    const discountRow = document.getElementById("discountRow");
 
-    const totalElement =
-        document.getElementById("cartTotal");
-
-    const discountElement =
-        document.getElementById("cartDiscount");
-
-    const discountRow =
-        document.getElementById("discountRow");
-
-    const couponInput =
-        document.getElementById("couponCode");
-
-    const couponButton =
-        document.getElementById("applyCoupon");
-
-    const couponMessage =
-        document.getElementById("couponMessage");
+    const couponInput = document.getElementById("couponCode");
+    const couponButton = document.getElementById("applyCoupon");
+    const couponMessage = document.getElementById("couponMessage");
 
 
-    /* =============================================
-       LOAD CART
-    ============================================= */
+    let cart = getCart();
 
-    let cart = JSON.parse(
-        localStorage.getItem("jhustinCart")
-    ) || [];
-
+    let products = [];
 
     let discount = 0;
 
 
+    /* ============================================
+       GET CART
+    ============================================ */
 
-    /* =============================================
-       SAVE CART
-    ============================================= */
+    function getCart() {
 
-    function saveCart() {
+        try {
 
-        localStorage.setItem(
-            "jhustinCart",
-            JSON.stringify(cart)
-        );
+            return JSON.parse(
+                localStorage.getItem(CART_KEY)
+            ) || [];
 
-        updateCartCount();
+        } catch (error) {
+
+            console.error("Cart read error:", error);
+
+            return [];
+        }
 
     }
 
 
+    /* ============================================
+       SAVE CART
+    ============================================ */
 
-    /* =============================================
-       HEADER CART COUNT
-    ============================================= */
+    function saveCart() {
+
+        localStorage.setItem(
+            CART_KEY,
+            JSON.stringify(cart)
+        );
+
+        updateCartCount();
+    }
+
+
+    /* ============================================
+       FETCH PRODUCTS FROM BACKEND
+    ============================================ */
+
+    async function loadProducts() {
+
+        try {
+
+            const response = await fetch("/api/products");
+
+            if (!response.ok) {
+                throw new Error(
+                    "Unable to load products"
+                );
+            }
+
+            products = await response.json();
+
+        } catch (error) {
+
+            console.error(
+                "Product loading error:",
+                error
+            );
+
+            cartItemsContainer.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="6"
+                        class="jh-cart-error">
+
+                        We couldn't load your cart.
+                        Please refresh the page.
+
+                    </td>
+
+                </tr>
+
+            `;
+        }
+    }
+
+
+    /* ============================================
+       FIND PRODUCT
+    ============================================ */
+
+    function findProduct(productId) {
+
+        return products.find(product =>
+
+            String(product.id) ===
+            String(productId)
+
+        );
+    }
+
+
+    /* ============================================
+       MONEY
+    ============================================ */
+
+    function money(value) {
+
+        return "$" + Number(value).toFixed(2);
+    }
+
+
+    /* ============================================
+       ESCAPE
+    ============================================ */
+
+    function escapeHtml(value) {
+
+        return String(value ?? "")
+
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+
+    /* ============================================
+       PRODUCT IMAGE
+    ============================================ */
+
+    function getImage(product) {
+
+        return (
+            product.image ||
+            product.image_url ||
+            product.imageUrl ||
+            "images/product-placeholder.jpg"
+        );
+    }
+
+
+    /* ============================================
+       CART COUNT
+    ============================================ */
 
     function updateCartCount() {
 
         const count = cart.reduce(
-            (total, product) =>
-                total + product.quantity,
+
+            (total, item) =>
+                total + Number(item.quantity || 0),
+
             0
         );
 
 
         document
             .querySelectorAll(".cart-count")
-            .forEach(function (element) {
+            .forEach(element => {
 
                 element.textContent = count;
 
             });
-
     }
 
 
-
-    /* =============================================
-       CURRENCY
-    ============================================= */
-
-    function money(value) {
-
-        return "$" + Number(value).toFixed(2);
-
-    }
-
-
-
-    /* =============================================
-       RENDER CART
-    ============================================= */
+    /* ============================================
+       RENDER
+    ============================================ */
 
     function renderCart() {
 
         cartItemsContainer.innerHTML = "";
 
 
-        /* EMPTY CART */
+        /* EMPTY */
 
-        if (cart.length === 0) {
+        if (!cart.length) {
 
             cartContent.style.display = "none";
 
@@ -452,7 +541,6 @@
             updateCartCount();
 
             return;
-
         }
 
 
@@ -463,22 +551,54 @@
 
         let subtotal = 0;
 
-
-        cart.forEach(function (product, index) {
-
-            const productSubtotal =
-                product.price * product.quantity;
+        let validItems = 0;
 
 
-            subtotal += productSubtotal;
+        cart.forEach(function (cartItem, index) {
 
+            const product =
+                findProduct(cartItem.productId);
+
+
+            if (!product) {
+
+                console.warn(
+                    "Product not found:",
+                    cartItem.productId
+                );
+
+                return;
+            }
+
+
+            validItems++;
+
+
+            const quantity =
+                Number(cartItem.quantity) || 1;
+
+
+            const price =
+                Number(product.price);
+
+
+            const lineTotal =
+                price * quantity;
+
+
+            subtotal += lineTotal;
+
+
+            const image =
+                getImage(product);
 
 
             const row =
                 document.createElement("tr");
 
 
-            row.className = "cart_item";
+            row.className =
+                "cart_item jh-modern-cart-item";
 
 
             row.innerHTML = `
@@ -489,9 +609,10 @@
                         type="button"
                         class="remove"
                         data-index="${index}"
-                        aria-label="Remove ${escapeHtml(product.name)}"
-                    >
-                        &times;
+                        aria-label="Remove item">
+
+                        ×
+
                     </button>
 
                 </td>
@@ -499,15 +620,14 @@
 
                 <td
                     class="product-thumbnail"
-                    data-title="Product"
-                >
+                    data-title="Product">
 
-                    <a href="product.html?id=${encodeURIComponent(product.id)}">
+                    <a
+                        href="product.html?id=${encodeURIComponent(product.id)}">
 
                         <img
-                            src="${escapeHtml(product.image)}"
-                            alt="${escapeHtml(product.name)}"
-                        >
+                            src="${escapeHtml(image)}"
+                            alt="${escapeHtml(product.name)}">
 
                     </a>
 
@@ -516,59 +636,61 @@
 
                 <td
                     class="product-name"
-                    data-title="Name"
-                >
+                    data-title="Product">
 
-                    <a href="product.html?id=${encodeURIComponent(product.id)}">
+                    <a
+                        href="product.html?id=${encodeURIComponent(product.id)}">
 
                         ${escapeHtml(product.name)}
 
                     </a>
+
+                    <span class="jh-cart-product-type">
+                        Official Store
+                    </span>
 
                 </td>
 
 
                 <td
                     class="product-price"
-                    data-title="Price"
-                >
+                    data-title="Price">
 
-                    ${money(product.price)}
+                    ${money(price)}
 
                 </td>
 
 
                 <td
                     class="product-quantity"
-                    data-title="Quantity"
-                >
+                    data-title="Quantity">
 
                     <div class="quantity-control">
 
                         <button
                             type="button"
                             class="qty-minus"
-                            data-index="${index}"
-                        >
+                            data-index="${index}">
+
                             −
+
                         </button>
 
 
-                        <input
-                            type="number"
-                            class="qty-input"
-                            data-index="${index}"
-                            min="1"
-                            value="${product.quantity}"
-                        >
+                        <span class="qty-value">
+
+                            ${quantity}
+
+                        </span>
 
 
                         <button
                             type="button"
                             class="qty-plus"
-                            data-index="${index}"
-                        >
+                            data-index="${index}">
+
                             +
+
                         </button>
 
                     </div>
@@ -578,10 +700,9 @@
 
                 <td
                     class="product-subtotal"
-                    data-title="Subtotal"
-                >
+                    data-title="Subtotal">
 
-                    ${money(productSubtotal)}
+                    ${money(lineTotal)}
 
                 </td>
 
@@ -593,17 +714,29 @@
         });
 
 
+        /* NO VALID PRODUCTS */
 
-        /* =============================================
-           TOTAL
-        ============================================= */
+        if (!validItems) {
+
+            cartContent.style.display = "none";
+
+            emptyCart.style.display = "block";
+
+            return;
+        }
+
+
+        /* TOTAL */
 
         const discountAmount =
             subtotal * discount;
 
 
         const finalTotal =
-            Math.max(0, subtotal - discountAmount);
+            Math.max(
+                0,
+                subtotal - discountAmount
+            );
 
 
         subtotalElement.textContent =
@@ -614,12 +747,10 @@
             money(finalTotal);
 
 
-
         if (discount > 0) {
 
             discountRow.style.display =
                 "table-row";
-
 
             discountElement.textContent =
                 "-" + money(discountAmount);
@@ -628,53 +759,49 @@
 
             discountRow.style.display =
                 "none";
-
         }
 
 
-        saveCart();
-
+        updateCartCount();
     }
 
 
-
-    /* =============================================
-       CART BUTTON EVENTS
-    ============================================= */
+    /* ============================================
+       CART ACTIONS
+    ============================================ */
 
     cartItemsContainer.addEventListener(
         "click",
         function (event) {
 
-
-            /* REMOVE */
-
-            const removeButton =
+            const remove =
                 event.target.closest(".remove");
-
-
-            if (removeButton) {
-
-                const index =
-                    Number(removeButton.dataset.index);
-
-
-                cart.splice(index, 1);
-
-
-                renderCart();
-
-                return;
-
-            }
-
-
-
-            /* QUANTITY MINUS */
 
             const minus =
                 event.target.closest(".qty-minus");
 
+            const plus =
+                event.target.closest(".qty-plus");
+
+
+            /* REMOVE */
+
+            if (remove) {
+
+                const index =
+                    Number(remove.dataset.index);
+
+                cart.splice(index, 1);
+
+                saveCart();
+
+                renderCart();
+
+                return;
+            }
+
+
+            /* MINUS */
 
             if (minus) {
 
@@ -686,21 +813,21 @@
 
                     cart[index].quantity--;
 
-                    renderCart();
+                } else {
 
+                    cart.splice(index, 1);
                 }
 
-                return;
 
+                saveCart();
+
+                renderCart();
+
+                return;
             }
 
 
-
-            /* QUANTITY PLUS */
-
-            const plus =
-                event.target.closest(".qty-plus");
-
+            /* PLUS */
 
             if (plus) {
 
@@ -708,154 +835,71 @@
                     Number(plus.dataset.index);
 
 
-                cart[index].quantity++;
+                cart[index].quantity =
+                    Number(cart[index].quantity) + 1;
+
+
+                saveCart();
 
                 renderCart();
-
             }
 
         }
     );
 
 
-
-    /* =============================================
-       MANUAL QUANTITY
-    ============================================= */
-
-    cartItemsContainer.addEventListener(
-        "change",
-        function (event) {
-
-
-            if (
-                !event.target.classList.contains(
-                    "qty-input"
-                )
-            ) {
-                return;
-            }
-
-
-            const index =
-                Number(event.target.dataset.index);
-
-
-            let quantity =
-                parseInt(event.target.value);
-
-
-            if (
-                !Number.isInteger(quantity) ||
-                quantity < 1
-            ) {
-
-                quantity = 1;
-
-            }
-
-
-            cart[index].quantity =
-                quantity;
-
-
-            renderCart();
-
-        }
-    );
-
-
-
-    /* =============================================
+    /* ============================================
        COUPON
-    ============================================= */
+    ============================================ */
 
-    couponButton.addEventListener(
-        "click",
-        function () {
+    if (couponButton) {
 
+        couponButton.addEventListener(
+            "click",
+            function () {
 
-            const code =
-                couponInput.value
-                    .trim()
-                    .toUpperCase();
-
-
-            /*
-             * Temporary frontend demo coupon.
-             *
-             * IMPORTANT:
-             * Move coupon validation to backend
-             * before production.
-             */
-
-            if (code === "JHUSTIN10") {
-
-                discount = 0.10;
+                const code =
+                    couponInput.value
+                        .trim()
+                        .toUpperCase();
 
 
-                couponMessage.textContent =
-                    "Coupon applied: 10% discount.";
+                if (code === "JHUSTIN10") {
 
+                    discount = 0.10;
 
-                couponMessage.classList.remove(
-                    "error"
-                );
+                    couponMessage.textContent =
+                        "10% discount applied.";
 
+                    couponMessage.className =
+                        "coupon-message success";
 
-                couponMessage.classList.add(
-                    "success"
-                );
+                } else {
 
+                    discount = 0;
 
-                renderCart();
+                    couponMessage.textContent =
+                        "That coupon isn't valid.";
 
-            } else {
-
-                discount = 0;
-
-
-                couponMessage.textContent =
-                    "Invalid coupon code.";
-
-
-                couponMessage.classList.remove(
-                    "success"
-                );
-
-
-                couponMessage.classList.add(
-                    "error"
-                );
+                    couponMessage.className =
+                        "coupon-message error";
+                }
 
 
                 renderCart();
 
             }
-
-        }
-    );
-
-
-
-    /* =============================================
-       BASIC HTML ESCAPING
-    ============================================= */
-
-    function escapeHtml(value) {
-
-        return String(value)
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
-
+        );
     }
 
 
+    /* ============================================
+       INITIALIZE
+    ============================================ */
 
-    /* INITIALIZE */
+    updateCartCount();
+
+    await loadProducts();
 
     renderCart();
 

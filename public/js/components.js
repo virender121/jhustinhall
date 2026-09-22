@@ -126,5 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(function (error) {
             console.error("Header error:", error);
         });
+        
+    
 
 });
