@@ -18,7 +18,6 @@ module.exports = async function handler(req, res) {
             message
         } = req.body || {};
 
-
         // ==============================
         // VALIDATION
         // ==============================
@@ -31,16 +30,26 @@ module.exports = async function handler(req, res) {
 
         }
 
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({
+                error: "Please enter a valid email address."
+           });
+        }
+
 
         // ==============================
         // EMAIL TRANSPORT
         // ==============================
+        const smtpPort = Number(process.env.SMTP_PORT || 465);
 
         const transporter = nodemailer.createTransport({
 
             host: process.env.SMTP_HOST,
 
-            port: Number(process.env.SMTP_PORT || 465),
+            port: smtpPort === 465,
 
             secure: true,
 
@@ -60,7 +69,7 @@ module.exports = async function handler(req, res) {
 
             from: `"Jhustin Hall Website" <${process.env.SMTP_USER}>`,
 
-            to: "panku6688t@gmail.com",
+            to: process.env.CONTACT_EMAIL,
 
             replyTo: email,
 
@@ -68,6 +77,18 @@ module.exports = async function handler(req, res) {
                 subject
                     ? `Website Contact: ${subject}`
                     : `New Website Message from ${name}`,
+            
+            text: `
+               New Jhustin Hall Website Contact
+
+                Name: ${name}
+                Email: ${email}
+                Phone: ${phone || "Not provided"}
+                Subject: ${subject || "General Inquiry"}
+
+                Message:
+                ${message}
+            `,
 
             html: `
 
@@ -151,7 +172,8 @@ module.exports = async function handler(req, res) {
             success: true,
             message: "Message sent successfully."
         });
-
+        
+      
 
     } catch (error) {
 
